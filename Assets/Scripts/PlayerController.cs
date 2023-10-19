@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         //Comprovaci?n de suelo
         CheckGround();
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (!canWalk && !falling)//Para no quedarse atascado en rampas en las que no se puede caminar
         {
-            rb.velocity = new Vector3(direction.x * speed, -speed*2, direction.z * speed);
+            rb.velocity = new Vector3(direction.x * speed, -speed * 2, direction.z * speed);
         }
 
         ///////ROTACI?N////////
@@ -56,14 +56,14 @@ public class PlayerController : MonoBehaviour
     private void CheckGround()
     {
         //Comprobamos si puede caminar en el terreno
-        RaycastHit hit; //Aqu? se guarda la informaci?n del raycast
+        RaycastHit hit; //Aqui se guarda la informacion del raycast
         Physics.Raycast(transform.position + new Vector3(0, 0.1f, 0), Vector3.down, out hit);//Raycast para comprobar si est? en el suelo
         if (hit.point != null && hit.collider != null)
         {
-            if (hit.distance < 0.25f)//Se comprueva si el punto detectado est? suficientemente cerca
+            if (hit.distance < 0.25f)//Se comprueba si el punto detectado est? suficientemente cerca
             {
                 falling = false;
-                if (hit.transform.CompareTag("Walkable"))//Se comprueva si la superficie tiene la tag "Walkable" para ver si se deber?a andar sobre ella
+                if (hit.transform.CompareTag("Walkable"))//Se comprueba si la superficie tiene la tag "Walkable" para ver si se deberia andar sobre ella
                 {
                     canWalk = true;
                 }
