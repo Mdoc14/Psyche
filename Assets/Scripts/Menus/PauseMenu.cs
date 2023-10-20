@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public Animator changeFadeAnimator;
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
 
@@ -39,12 +40,30 @@ public class PauseMenu : MonoBehaviour
 
     public void GoBackToMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
+        if (changeFadeAnimator != null)
+        {
+            changeFadeAnimator.SetTrigger("BlackOut");
+        }
+        Invoke("PlayChangeScene", 2f);
     }
 
     public void Quit()
     {
+        Time.timeScale = 1f;
         Debug.Log("Saliendo del juego ...");
+        changeFadeAnimator.SetTrigger("BlackOut");
+        Invoke("QuitAction", 2f);
+    }
+
+    private void PlayChangeScene()
+    {
+        changeFadeAnimator.ResetTrigger("BlackOut");
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitAction()
+    {
         Application.Quit();
     }
 }
