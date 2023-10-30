@@ -5,8 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Walkable
-  - RoomT1
-  - RoomT2
+  - Habitacion
+  - Pasillo
+  - Servicio
+  - Oficina
+  - PasilloP0
+  - Cocina
+  - Comedor
+  - Salon
   layers:
   - Default
   - TransparentFX
