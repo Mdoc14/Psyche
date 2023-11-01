@@ -14,6 +14,7 @@ TagManager:
   - Comedor
   - Salon
   - PlantaBaja
+  - Piso1
   layers:
   - Default
   - TransparentFX
