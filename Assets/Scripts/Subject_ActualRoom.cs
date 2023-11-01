@@ -77,6 +77,11 @@ public class Subject_ActualRoom : MonoBehaviour, ISubject<float>
             room = 8;
         }
 
+        if (other.CompareTag("PlantaBaja"))
+        {
+            room = 9;
+        }
+
         NotifyObservers();
 
     }

@@ -13,6 +13,7 @@ TagManager:
   - Cocina
   - Comedor
   - Salon
+  - PlantaBaja
   layers:
   - Default
   - TransparentFX

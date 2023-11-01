@@ -7,35 +7,43 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
 {
     //Atributos de la clase
 
-    //GameObject que contiene el mapa
-    public GameObject mapa;
-    private List<GameObject> salaActual;
+    private List<GameObject> salaActualSinParedes;
+    private List<GameObject> salaActualConMuros;
 
-    //Listas con las paredes, suelos y objetos del mapa
-    public List<GameObject> habitacion = new List<GameObject>();
-    public List<GameObject> pasillo = new List<GameObject>();
-    public List<GameObject> servicio = new List<GameObject>();
-    public List<GameObject> oficina = new List<GameObject>();
-    public List<GameObject> pasilloP0 = new List<GameObject>();
-    public List<GameObject> cocina = new List<GameObject>();
-    public List<GameObject> comedor = new List<GameObject>();
-    public List<GameObject> salon = new List<GameObject>();
+
+    //Listas con las paredes que se desactivaran en cada sala
+    public List<GameObject> habitacionParedes = new List<GameObject>();
+    public List<GameObject> pasilloParedes = new List<GameObject>();
+    public List<GameObject> servicioParedes = new List<GameObject>();
+    public List<GameObject> oficinaParedes = new List<GameObject>();
+    public List<GameObject> pasilloP0Paredes = new List<GameObject>();
+    public List<GameObject> cocinaParedes = new List<GameObject>();
+    public List<GameObject> comedorParedes = new List<GameObject>();
+    public List<GameObject> salonParedes = new List<GameObject>();
+
+    //Listas con los muros que apareceran en la base del suelo
+    public List<GameObject> habitacionMuros = new List<GameObject>();
+    public List<GameObject> pasilloMuros = new List<GameObject>();
+    public List<GameObject> servicioMuros = new List<GameObject>();
+    public List<GameObject> oficinaMuros = new List<GameObject>();
+    public List<GameObject> pasilloP0Muros = new List<GameObject>();
+    public List<GameObject> cocinaMuros = new List<GameObject>();
+    public List<GameObject> comedorMuros = new List<GameObject>();
+    public List<GameObject> salonMuros = new List<GameObject>();
+
+    //Listas con todos los objetos de cada piso, incluyendo suelos y paredes
+    public List<GameObject> piso1GameObjects = new List<GameObject>();
+    public List<GameObject> piso0GameObjects = new List<GameObject>();
 
     private void Awake()
     {
         //Buscamos al jugador y suscribimos esta clase a su sujeto
         GameObject.FindWithTag("Player").GetComponent<Subject_ActualRoom>().AddObserver(this);
 
-        quitRoom(pasillo);
-        quitRoom(servicio);
-        quitRoom(oficina);
-        quitRoom(cocina);
-        quitRoom(comedor);
-        quitRoom(salon);
-        quitRoom(pasilloP0);
-
-        salaActual = habitacion;
-        chargeRoom(salaActual);
+        quitRoom(habitacionParedes);
+        chargeRoom(habitacionMuros);
+        salaActualSinParedes = habitacionParedes;
+        salaActualConMuros = habitacionMuros;
 
     }
 
@@ -56,48 +64,74 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
             obj.GetComponent<MeshRenderer>().enabled = true;
         }
     }
-
-    //Desactiva la sala actual y carga la siguiente sala
-    public void updateEnviroment(float room, List<GameObject> currentRoom, List<GameObject> nextRoom)
+    
+    public void updateEnviroment(List<GameObject> salaSinParedes, List<GameObject> salaConMuros, List<GameObject> nextSalaSinParedes, List<GameObject> nextSalaConMuros)
     {
-        quitRoom(currentRoom);
-        chargeRoom(nextRoom);
-        salaActual = nextRoom;
+        chargeRoom(salaSinParedes);
+        quitRoom(salaConMuros);
+
+        salaActualSinParedes = nextSalaSinParedes;
+        salaActualConMuros = nextSalaConMuros;
+
+        quitRoom(nextSalaSinParedes);
+        chargeRoom(nextSalaConMuros);
     }
     public void UpdateObserver(float room)
     {
         switch (room)
         {
             case 1: //Sala actual --> Habitacion
-                updateEnviroment(1, salaActual, habitacion);
+
+                updateEnviroment(salaActualSinParedes, salaActualConMuros, habitacionParedes, habitacionMuros);
                 break;
 
             case 2: //Sala actual --> Pasillo
-                updateEnviroment(2, salaActual, pasillo);
+
+                updateEnviroment(salaActualSinParedes, salaActualConMuros, pasilloParedes, pasilloMuros);
                 break;
 
             case 3: //Sala actual --> Servicio
-                updateEnviroment(3, salaActual, servicio);
+
+                updateEnviroment(salaActualSinParedes, salaActualConMuros, servicioParedes, servicioMuros);
                 break;
 
             case 4: //Sala actual --> Oficina
-                updateEnviroment(4, salaActual, oficina);
+
+                updateEnviroment(salaActualSinParedes, salaActualConMuros, oficinaParedes, oficinaMuros);
                 break;
 
             case 5: //Sala actual --> Pasillo planta baja
-                updateEnviroment(5, salaActual, pasilloP0);
+
+                updateEnviroment(salaActualSinParedes, salaActualConMuros, pasilloP0Paredes, pasilloP0Muros);
                 break;
 
             case 6: //Sala actual --> Cocina
-                updateEnviroment(6, salaActual, cocina);
+
+                updateEnviroment(salaActualSinParedes, salaActualConMuros, cocinaParedes, cocinaMuros);
                 break;
 
             case 7: //Sala actual --> Comedor
-                updateEnviroment(7, salaActual, comedor);
+
+                updateEnviroment(salaActualSinParedes, salaActualConMuros, comedorParedes, comedorMuros);
                 break;
 
             case 8: //Sala actual --> Salon
-                updateEnviroment(8, salaActual, salon);
+
+                updateEnviroment(salaActualSinParedes, salaActualConMuros, salonParedes, salonMuros);
+                break;
+            case 9: //Cambio de piso, piso actual: planta baja
+
+                quitRoom(piso1GameObjects);
+                quitRoom(salaActualConMuros);
+
+                salaActualSinParedes = pasilloP0Paredes;
+                salaActualConMuros = pasilloP0Muros;
+
+                chargeRoom(salaActualSinParedes);
+                chargeRoom(salaActualConMuros);
+                break;
+
+            case 10: //Cambio de piso, piso actual: piso 1
                 break;
 
             default:
