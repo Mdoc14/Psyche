@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 7600379568773374283}
   m_Layer: 3
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: LanternPos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2640640645208221636}
   m_LocalRotation: {x: -0, y: 0.019891877, z: -0, w: 0.9998021}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 50, y: 0, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []

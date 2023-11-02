@@ -35,19 +35,19 @@ public class lanternController : MonoBehaviour
         }
         else
         {
-            //Parpadeo de linterna
-            if (t1 < t2)
-            {
-                t1+=Time.deltaTime;
-            }
-            else
-            {
-                On = false;
-                Invoke("LanternOn", Random.Range(0.05f, 0.075f));
-                t1 = 0;
-                t2 = Random.Range(0.25f, blinkingTime);
-            }
-            //
+            ////Parpadeo de linterna
+            //if (t1 < t2)
+            //{
+            //    t1+=Time.deltaTime;
+            //}
+            //else
+            //{
+            //    On = false;
+            //    Invoke("LanternOn", Random.Range(0.05f, 0.075f));
+            //    t1 = 0;
+            //    t2 = Random.Range(0.25f, blinkingTime);
+            //}
+            ////
             if (lantern.intensity < initIntensity)
             {
                 lantern.intensity += Time.deltaTime * initIntensity * 25;
