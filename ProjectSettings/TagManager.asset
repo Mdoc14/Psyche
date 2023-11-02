@@ -15,11 +15,12 @@ TagManager:
   - Salon
   - PlantaBaja
   - Piso1
+  - LanternPos
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Only Raycast
   - Water
   - UI
   - 

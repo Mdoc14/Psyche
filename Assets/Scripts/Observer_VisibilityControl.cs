@@ -62,6 +62,17 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
         foreach (GameObject obj in lista)
         {
             obj.GetComponent<MeshRenderer>().enabled = false;
+            if (obj.CompareTag("Walkable") || obj.CompareTag("LanternPos"))//Para el funcionamiento de la linterna
+            {
+                if (obj.GetComponent<BoxCollider>() != null)
+                {
+                    obj.GetComponent<BoxCollider>().enabled = false;
+                }
+                else if (obj.GetComponent<MeshCollider>() != null)
+                {
+                    obj.GetComponent<MeshCollider>().enabled = false;
+                }
+            }
         }
     }
 
@@ -71,6 +82,17 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
         foreach (GameObject obj in lista)
         {
             obj.GetComponent<MeshRenderer>().enabled = true;
+            if (obj.CompareTag("Walkable") || obj.CompareTag("LanternPos"))//Para el funcionamiento de la linterna
+            {
+                if (obj.GetComponent<BoxCollider>() != null)
+                {
+                    obj.GetComponent<BoxCollider>().enabled = true;
+                }
+                else if(obj.GetComponent<MeshCollider>() != null)
+                {
+                    obj.GetComponent<MeshCollider>().enabled = true;
+                }
+            }
         }
     }
     

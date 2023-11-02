@@ -38,56 +38,90 @@ public class Subject_ActualRoom : MonoBehaviour, ISubject<float>
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Habitacion")) 
-        {
-            room = 1;
-        }
+        //////Mejor con un switch
+        //if (other.CompareTag("Habitacion")) 
+        //{
+        //    room = 1;
+        //}
 
-        if (other.CompareTag("Pasillo"))
-        {
-            room = 2;
-        }
+        //if (other.CompareTag("Pasillo"))
+        //{
+        //    room = 2;
+        //}
 
-        if (other.CompareTag("Servicio"))
-        {
-            room = 3;
-        }
+        //if (other.CompareTag("Servicio"))
+        //{
+        //    room = 3;
+        //}
 
-        if (other.CompareTag("Oficina"))
-        {
-            room = 4;
-        }
+        //if (other.CompareTag("Oficina"))
+        //{
+        //    room = 4;
+        //}
 
-        if (other.CompareTag("PasilloP0"))
-        {
-            room = 5;
-        }
+        //if (other.CompareTag("PasilloP0"))
+        //{
+        //    room = 5;
+        //}
 
-        if (other.CompareTag("Cocina"))
-        {
-            room = 6;
-        }
+        //if (other.CompareTag("Cocina"))
+        //{
+        //    room = 6;
+        //}
 
-        if (other.CompareTag("Comedor"))
-        {
-            room = 7;
-        }
+        //if (other.CompareTag("Comedor"))
+        //{
+        //    room = 7;
+        //}
 
-        if (other.CompareTag("Salon"))
-        {
-            room = 8;
-        }
+        //if (other.CompareTag("Salon"))
+        //{
+        //    room = 8;
+        //}
 
-        if (other.CompareTag("PlantaBaja"))
-        {
-            room = 9;
-        }
+        //if (other.CompareTag("PlantaBaja"))
+        //{
+        //    room = 9;
+        //}
 
-        if (other.CompareTag("Piso1"))
-        {
-            room = 10;
-        }
+        //if (other.CompareTag("Piso1"))
+        //{
+        //    room = 10;
+        //}
 
+        switch (other.tag)
+        {
+            case "Habitacion":
+                room = 1;
+                break;
+            case "Pasillo":
+                room = 2;
+                break;
+            case "Servicio":
+                room = 3;
+                break;
+            case "Oficina":
+                room = 4;
+                break;
+            case "PasilloP0":
+                room = 5;
+                break;
+            case "Cocina":
+                room = 6;
+                break;
+            case "Comedor":
+                room = 7;
+                break;
+            case "Salon":
+                room = 8;
+                break;
+            case "PlantaBaja":
+                room = 9;
+                break;
+            case "Piso1":
+                room = 10;
+                break;
+        }
         NotifyObservers();
 
     }

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 1eeefab9beb9ca7469001235d0336e46, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.033632394, g: 0.04836094, b: 0.07518265, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 9893908}
   - component: {fileID: 9893907}
   - component: {fileID: 9893906}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger3
   m_TagString: Servicio
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 42769654}
   - component: {fileID: 42769653}
   - component: {fileID: 42769652}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger8
   m_TagString: PasilloP0
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ Transform:
   - {fileID: 2071263800}
   - {fileID: 1021504733}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &187115005 stripped
 GameObject:
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 210402755}
   - component: {fileID: 210402754}
   - component: {fileID: 210402753}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger12
   m_TagString: PasilloP0
   m_Icon: {fileID: 0}
@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 250055826}
   - component: {fileID: 250055825}
   - component: {fileID: 250055824}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger15
   m_TagString: Salon
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 421132591}
   - component: {fileID: 421132590}
   - component: {fileID: 421132589}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger6
   m_TagString: Pasillo
   m_Icon: {fileID: 0}
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 559919418}
   - component: {fileID: 559919417}
   - component: {fileID: 559919416}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger13
   m_TagString: Cocina
   m_Icon: {fileID: 0}
@@ -1239,7 +1239,7 @@ GameObject:
   - component: {fileID: 679816236}
   - component: {fileID: 679816235}
   - component: {fileID: 679816234}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger4
   m_TagString: Pasillo
   m_Icon: {fileID: 0}
@@ -1420,124 +1420,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 921247587}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &910353499
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 910353501}
-  - component: {fileID: 910353500}
-  - component: {fileID: 910353502}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &910353500
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910353499}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 0.1036401, g: 0.10879803, b: 0.16037738, a: 1}
-  m_Intensity: 0.5
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &910353501
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910353499}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &910353502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910353499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
 --- !u!1 &913778003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4633814557622853171, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -1573,10 +1455,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9216599144591267827, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -9160448348818367555, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: RodaPiesEscalera
+      objectReference: {fileID: 0}
+    - target: {fileID: -9160448348818367555, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -9155754705807341225, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8952184463222241208, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8929017962407796734, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8895820734940618707, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8887853973716773470, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8887822363086392902, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -1638,74 +1560,194 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParedOesteSA
       objectReference: {fileID: 0}
+    - target: {fileID: -8601668846242093712, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8584863042892966828, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8573507917752104944, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8343955421217494906, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8301968056811040446, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8250657373754288186, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -8127825029183500537, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteOOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: -8127825029183500537, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8103636513388751568, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedNorteCO
       objectReference: {fileID: 0}
+    - target: {fileID: -8103636513388751568, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -7915115642055847368, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurPOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: -7915115642055847368, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7908444616858881371, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteO
       objectReference: {fileID: 0}
+    - target: {fileID: -7908444616858881371, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -7648064745460009477, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteCOOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: -7648064745460009477, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7545257880508184584, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7506327436829829856, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7506327436829829856, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -7502920712208920300, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo35
+      objectReference: {fileID: 0}
+    - target: {fileID: -7502920712208920300, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7470364323626397857, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteHOculta2
       objectReference: {fileID: 0}
+    - target: {fileID: -7470364323626397857, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7359361873351402547, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -7337789707522272953, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteS
+      objectReference: {fileID: 0}
+    - target: {fileID: -7337789707522272953, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7129880741423300797, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteC
       objectReference: {fileID: 0}
+    - target: {fileID: -7129880741423300797, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -7082758386251768373, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedNorteCOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: -7082758386251768373, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7038471627731011361, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7038471627731011361, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7001657102654781034, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6951617712853080000, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -6847718390743063163, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo12
       objectReference: {fileID: 0}
+    - target: {fileID: -6847718390743063163, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -6843397467430306418, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6843397467430306418, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6838119714677606782, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -1713,24 +1755,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParedEsteC
       objectReference: {fileID: 0}
+    - target: {fileID: -6838119714677606782, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -6709420873199753913, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteSOculta2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6709420873199753913, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6669626396330598415, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6581141337825183556, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -6419360523323082795, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo
       objectReference: {fileID: 0}
+    - target: {fileID: -6419360523323082795, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -6249915142682535121, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo5
       objectReference: {fileID: 0}
+    - target: {fileID: -6249915142682535121, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6024829667871875559, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5879690004730720225, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5853353471914185936, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -5770785607724865754, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5770785607724865754, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5739176439739009163, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -1738,60 +1830,160 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParedSurHOculta
       objectReference: {fileID: 0}
+    - target: {fileID: -5739176439739009163, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -5727990397187567246, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteSOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: -5727990397187567246, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -5703146465769819424, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedNorteP
       objectReference: {fileID: 0}
+    - target: {fileID: -5703146465769819424, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -5537851035220656644, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurS
+      objectReference: {fileID: 0}
+    - target: {fileID: -5537851035220656644, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5537851035220656644, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5430272654074244131, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5430272654074244131, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5342832315595362277, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -5329454072868276418, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo34
+      objectReference: {fileID: 0}
+    - target: {fileID: -5329454072868276418, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5305407667021592098, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -5288364618127938315, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5288364618127938315, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5268850429675744748, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4935498290960768858, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -4743242393534735015, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4743242393534735015, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4648965205233354185, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Barandilla3
       objectReference: {fileID: 0}
+    - target: {fileID: -4648965205233354185, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4648965205233354185, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: -4574157301555521185, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -4533032269017348350, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteS
+      objectReference: {fileID: 0}
+    - target: {fileID: -4533032269017348350, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4524003350855160580, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4413589263399417675, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4413589263399417675, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -4394963539813213103, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteP
+      objectReference: {fileID: 0}
+    - target: {fileID: -4394963539813213103, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4263872867143985364, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -1800,62 +1992,182 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4263872867143985364, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4263872867143985364, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
       propertyPath: m_TagString
       value: Walkable
+      objectReference: {fileID: 0}
+    - target: {fileID: -4253903609117513086, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4014709889552405437, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -3927811920859522609, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo38
       objectReference: {fileID: 0}
+    - target: {fileID: -3927811920859522609, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -3724323119866163585, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3724323119866163585, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3571948878610833418, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3557986359031435804, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -3553379988405889817, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo10
       objectReference: {fileID: 0}
+    - target: {fileID: -3553379988405889817, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -3264669921971588278, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo25
+      objectReference: {fileID: 0}
+    - target: {fileID: -3264669921971588278, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3214129413207433190, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3153717511465237768, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -3057168974850513092, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo46
       objectReference: {fileID: 0}
+    - target: {fileID: -3057168974850513092, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -2886319660243717105, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2886319660243717105, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2844785753897894260, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2770492805375331135, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteOOculta2
       objectReference: {fileID: 0}
+    - target: {fileID: -2770492805375331135, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -2716056990356854990, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurCOculta2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2716056990356854990, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2684316771243122968, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2622672119910039265, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Barandilla2
       objectReference: {fileID: 0}
+    - target: {fileID: -2622672119910039265, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2622672119910039265, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: -2464986994736569589, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo23
       objectReference: {fileID: 0}
+    - target: {fileID: -2464986994736569589, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2450617633513892064, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2348974651521244951, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2222955339039706441, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -1983914583178897441, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1983914583178897441, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1904283744466109816, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -1863,24 +2175,54 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1904283744466109816, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -1890486637996197917, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo18
+      objectReference: {fileID: 0}
+    - target: {fileID: -1890486637996197917, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -1687297072466049545, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo17
       objectReference: {fileID: 0}
+    - target: {fileID: -1687297072466049545, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1560000583436457264, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -1434400157876564962, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedNorteCOculta2
       objectReference: {fileID: 0}
+    - target: {fileID: -1434400157876564962, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -1349200464829847420, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1349200464829847420, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1214966802883041850, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -1888,90 +2230,225 @@ PrefabInstance:
       propertyPath: m_Name
       value: Palo14
       objectReference: {fileID: 0}
+    - target: {fileID: -1214966802883041850, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -1209997483025577889, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteCOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: -1209997483025577889, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -1195745110140156183, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteP0
       objectReference: {fileID: 0}
+    - target: {fileID: -1195745110140156183, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -1145642941283511524, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedNorteCOOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: -1145642941283511524, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1094330836733662201, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1088021299256771943, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -1074179527945131430, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo27
       objectReference: {fileID: 0}
+    - target: {fileID: -1074179527945131430, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -1046578361890672229, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo29
+      objectReference: {fileID: 0}
+    - target: {fileID: -1046578361890672229, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -925455108041931339, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo2
       objectReference: {fileID: 0}
+    - target: {fileID: -925455108041931339, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -889728714308964393, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo28
+      objectReference: {fileID: 0}
+    - target: {fileID: -889728714308964393, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -859732589271358741, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo19
       objectReference: {fileID: 0}
+    - target: {fileID: -859732589271358741, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -586076176714368554, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -550081254251740219, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -524854806715722297, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -487068225693028349, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -257140555768016806, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurP0
+      objectReference: {fileID: 0}
+    - target: {fileID: -257140555768016806, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -140937612812936322, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo9
       objectReference: {fileID: 0}
+    - target: {fileID: -140937612812936322, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -101286685084241249, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo6
+      objectReference: {fileID: 0}
+    - target: {fileID: -101286685084241249, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -75942567206075605, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteP0
       objectReference: {fileID: 0}
+    - target: {fileID: -75942567206075605, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 186930460080714634, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurSAOculta2
+      objectReference: {fileID: 0}
+    - target: {fileID: 186930460080714634, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 206998405811606435, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteO
       objectReference: {fileID: 0}
+    - target: {fileID: 206998405811606435, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 206998405811606435, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 243105412146282482, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo36
+      objectReference: {fileID: 0}
+    - target: {fileID: 243105412146282482, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 343617334066244486, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 433020836833475118, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedNorteH
       objectReference: {fileID: 0}
+    - target: {fileID: 433020836833475118, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 467882308228399038, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 517889568589359687, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo33
+      objectReference: {fileID: 0}
+    - target: {fileID: 517889568589359687, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 527555627441090073, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -1980,27 +2457,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 527555627441090073, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 527555627441090073, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
       propertyPath: m_TagString
       value: Walkable
+      objectReference: {fileID: 0}
+    - target: {fileID: 577971907188551980, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 695628558648248916, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 850604837241375701, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 916955249463187851, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Casa
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 931486576862921115, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo31
+      objectReference: {fileID: 0}
+    - target: {fileID: 931486576862921115, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 975360723145775903, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteHOculta
       objectReference: {fileID: 0}
+    - target: {fileID: 975360723145775903, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080829703994478441, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1131974716849308494, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131974716849308494, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1157814426580944327, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -2008,15 +2535,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParedSurC
       objectReference: {fileID: 0}
+    - target: {fileID: 1157814426580944327, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165150043181145697, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1238223670854075113, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSAOesteOculta
       objectReference: {fileID: 0}
+    - target: {fileID: 1238223670854075113, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289818095405988883, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1302756593539863679, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302756593539863679, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396429211740981705, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1499697595548764752, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2033,35 +2590,85 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.22252
       objectReference: {fileID: 0}
+    - target: {fileID: 1589869157126826297, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642196310869823149, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1790792588053127282, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790792588053127282, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1963295194616299279, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteCO
       objectReference: {fileID: 0}
+    - target: {fileID: 1963295194616299279, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1973517735913494398, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurSOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973517735913494398, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146736665088232809, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174649826030771602, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2189217496845595276, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteOOculta
       objectReference: {fileID: 0}
+    - target: {fileID: 2189217496845595276, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2242757577856830860, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2242757577856830860, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2252317044436214110, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Escalera
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252317044436214110, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2252317044436214110, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2073,40 +2680,100 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParedSurP0Oculta
       objectReference: {fileID: 0}
+    - target: {fileID: 2272471426373016361, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2273800352388061194, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273800352388061194, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2297618298333637798, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2344120717281187482, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo32
       objectReference: {fileID: 0}
+    - target: {fileID: 2344120717281187482, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2388635531051074101, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteSOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388635531051074101, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2404974160415102445, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2404974160415102445, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577151081041289093, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2691676160106952731, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691676160106952731, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775486060082765754, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2786947841446358523, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurP02
       objectReference: {fileID: 0}
+    - target: {fileID: 2786947841446358523, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007294848318928498, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3074235631164157517, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurH
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074235631164157517, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3074235631164157517, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2118,30 +2785,85 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3083481621542963261, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311914947436067680, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634648302694795042, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710422647026539241, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710422647026539241, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3817025845268473977, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteCOOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817025845268473977, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3842375222670579707, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo42
       objectReference: {fileID: 0}
+    - target: {fileID: 3842375222670579707, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3931826954351335388, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3931826954351335388, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028299087830614812, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4039536886336860650, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurSA
       objectReference: {fileID: 0}
+    - target: {fileID: 4039536886336860650, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4091136073022976636, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurP
+      objectReference: {fileID: 0}
+    - target: {fileID: 4091136073022976636, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4091136073022976636, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2153,34 +2875,89 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4117344213836293035, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4171079979729732756, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurPOculta2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171079979729732756, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282163639888481208, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4285361151323538747, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo30
       objectReference: {fileID: 0}
+    - target: {fileID: 4285361151323538747, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4292563798717056016, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292563798717056016, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320325883429080389, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4337388333522695127, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo26
       objectReference: {fileID: 0}
+    - target: {fileID: 4337388333522695127, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415171399420225498, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442441759066755936, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4592163431936157187, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo13
       objectReference: {fileID: 0}
+    - target: {fileID: 4592163431936157187, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4630630963323776961, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630630963323776961, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4633814557622853171, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -2188,14 +2965,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParedSurCO
       objectReference: {fileID: 0}
+    - target: {fileID: 4633814557622853171, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4657625490832976316, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo45
       objectReference: {fileID: 0}
+    - target: {fileID: 4657625490832976316, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4659533483654611976, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659533483654611976, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4806737801955590829, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -2205,18 +2997,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4806737801955590829, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806737801955590829, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
       propertyPath: m_TagString
       value: Walkable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875367289973909273, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909682633446734965, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4985944292582680674, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo11
       objectReference: {fileID: 0}
+    - target: {fileID: 4985944292582680674, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5006284847887257944, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: SueloO
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006284847887257944, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5006284847887257944, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2228,10 +3045,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParedEsteCOOculta2
       objectReference: {fileID: 0}
+    - target: {fileID: 5013057389102881133, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022378799580175621, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5133959061974636008, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: SueloS
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133959061974636008, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5133959061974636008, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2243,20 +3075,40 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5155372669441650559, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5192416841987866447, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurSAOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192416841987866447, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5269198869066311499, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteCO
       objectReference: {fileID: 0}
+    - target: {fileID: 5269198869066311499, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5287075535378620900, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSurOOculta
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287075535378620900, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5456320595711608997, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2265,8 +3117,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5456320595711608997, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5456320595711608997, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
       propertyPath: m_TagString
       value: Walkable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496324943291996639, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551579385439430924, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5556174526760454171, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2275,13 +3142,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5556174526760454171, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556174526760454171, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
       propertyPath: m_TagString
       value: Walkable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664026204071326198, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5679444733452064370, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: SueloH
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679444733452064370, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5679444733452064370, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2293,10 +3175,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5711909199618474633, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5838870994222995624, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: SueloP0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838870994222995624, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5838870994222995624, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2308,34 +3200,84 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParedOesteP0Oculta
       objectReference: {fileID: 0}
+    - target: {fileID: 5843285981278126580, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6048624022103001095, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6048624022103001095, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6055254733667805006, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6055254733667805006, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6171609604964912801, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171609604964912801, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419879363957911575, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6425123458071022484, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6425123458071022484, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486243860803217308, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6522943564496508155, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522943564496508155, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531680482859280626, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573163823174283169, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6573163823174283169, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6579379647783863361, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -2343,15 +3285,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParedSurCOOculta
       objectReference: {fileID: 0}
+    - target: {fileID: 6579379647783863361, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6598192743649060323, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo16
       objectReference: {fileID: 0}
+    - target: {fileID: 6598192743649060323, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6624343994641792256, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedSur2P
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624343994641792256, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6624343994641792256, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2363,99 +3320,254 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6659638300135187734, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6902351146895204154, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteCOculta2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902351146895204154, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005206826607847436, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7101950314544359598, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedNorteSA
       objectReference: {fileID: 0}
+    - target: {fileID: 7101950314544359598, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7348624221741938924, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359787721847292951, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384672098369212529, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7445306098179109499, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445306098179109499, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7493583130667797624, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Barandilla4
       objectReference: {fileID: 0}
+    - target: {fileID: 7493583130667797624, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493583130667797624, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7527065178387265040, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7527065178387265040, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7527626604448108107, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7732737106481921518, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo21
       objectReference: {fileID: 0}
+    - target: {fileID: 7732737106481921518, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7882257948911597059, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882257948911597059, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8099421005229470902, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo39
       objectReference: {fileID: 0}
+    - target: {fileID: 8099421005229470902, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8109415542560094018, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Barandilla1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109415542560094018, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109415542560094018, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111965904315660936, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8119191242330927233, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo3
       objectReference: {fileID: 0}
+    - target: {fileID: 8119191242330927233, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8192424444947991155, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteSA
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192424444947991155, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8201113316266585712, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedEsteH
       objectReference: {fileID: 0}
+    - target: {fileID: 8201113316266585712, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8559454232812237210, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559454232812237210, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610263807484567221, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8661243897317610385, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo40
       objectReference: {fileID: 0}
+    - target: {fileID: 8661243897317610385, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8727187724493965712, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727187724493965712, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8797626095470648167, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: Palo37
       objectReference: {fileID: 0}
+    - target: {fileID: 8797626095470648167, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8866011469323348689, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedNorteC
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866011469323348689, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891086072279666198, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8974592075891387325, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9082217788876115361, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedNorteS
       objectReference: {fileID: 0}
+    - target: {fileID: 9082217788876115361, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9108099705458027402, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108099705458027402, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9137063611799128137, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -2463,10 +3575,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9137063611799128137, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9176388467848363134, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       propertyPath: m_Name
       value: ParedOesteH
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176388467848363134, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9176388467848363134, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
@@ -2637,6 +3759,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1644418500}
+    - targetCorrespondingSourceObject: {fileID: -8601668846242093712, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1618148591}
     - targetCorrespondingSourceObject: {fileID: 6624343994641792256, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       insertIndex: -1
@@ -2677,6 +3803,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1150321149}
+    - targetCorrespondingSourceObject: {fileID: 7101950314544359598, guid: 53cf64b47925b9e469fd9d45e267e277,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1483462419}
     - targetCorrespondingSourceObject: {fileID: 2252317044436214110, guid: 53cf64b47925b9e469fd9d45e267e277,
         type: 3}
       insertIndex: -1
@@ -2952,7 +4082,7 @@ GameObject:
   - component: {fileID: 1044054880}
   - component: {fileID: 1044054879}
   - component: {fileID: 1044054878}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger11
   m_TagString: Cocina
   m_Icon: {fileID: 0}
@@ -3057,7 +4187,7 @@ GameObject:
   - component: {fileID: 1061772713}
   - component: {fileID: 1061772712}
   - component: {fileID: 1061772711}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger14
   m_TagString: Salon
   m_Icon: {fileID: 0}
@@ -3213,7 +4343,7 @@ GameObject:
   - component: {fileID: 1124161454}
   - component: {fileID: 1124161453}
   - component: {fileID: 1124161452}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger2
   m_TagString: Habitacion
   m_Icon: {fileID: 0}
@@ -3491,7 +4621,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1170994439 stripped
 GameObject:
@@ -3523,7 +4653,7 @@ GameObject:
   - component: {fileID: 1224515734}
   - component: {fileID: 1224515733}
   - component: {fileID: 1224515732}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger16
   m_TagString: PasilloP0
   m_Icon: {fileID: 0}
@@ -3655,7 +4785,7 @@ GameObject:
   - component: {fileID: 1230859518}
   - component: {fileID: 1230859517}
   - component: {fileID: 1230859516}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger17
   m_TagString: Piso1
   m_Icon: {fileID: 0}
@@ -3772,7 +4902,7 @@ GameObject:
   - component: {fileID: 1273681231}
   - component: {fileID: 1273681230}
   - component: {fileID: 1273681229}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger9
   m_TagString: Comedor
   m_Icon: {fileID: 0}
@@ -4227,44 +5357,13 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 921247587}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1488239883 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8119191242330927233, guid: 53cf64b47925b9e469fd9d45e267e277,
-    type: 3}
-  m_PrefabInstance: {fileID: 921247587}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1491755246 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -8127825029183500537, guid: 53cf64b47925b9e469fd9d45e267e277,
-    type: 3}
-  m_PrefabInstance: {fileID: 921247587}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1513392859
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1513392863}
-  - component: {fileID: 1513392862}
-  - component: {fileID: 1513392861}
-  - component: {fileID: 1513392860}
-  m_Layer: 0
-  m_Name: '"SkyBox"'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1513392860
+--- !u!65 &1483462419
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513392859}
+  m_GameObject: {fileID: 1483462415}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -4277,73 +5376,20 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1513392861
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_Size: {x: 0.19999985, y: 3, z: 14.984986}
+  m_Center: {x: 10.914466, y: -1.6562779, z: 4.4437995}
+--- !u!1 &1488239883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8119191242330927233, guid: 53cf64b47925b9e469fd9d45e267e277,
+    type: 3}
+  m_PrefabInstance: {fileID: 921247587}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513392859}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 1eeefab9beb9ca7469001235d0336e46, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1513392862
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!1 &1491755246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8127825029183500537, guid: 53cf64b47925b9e469fd9d45e267e277,
+    type: 3}
+  m_PrefabInstance: {fileID: 921247587}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513392859}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1513392863
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513392859}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.478, y: -69.657974, z: 9.9}
-  m_LocalScale: {x: 2154.6545, y: 1, z: 1484.4686}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1522765896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1214966802883041850, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -4685,7 +5731,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618148587 stripped
 GameObject:
@@ -4693,6 +5739,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 921247587}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1618148591
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618148587}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.0000014, y: 3, z: 0.20000081}
+  m_Center: {x: 7.843563, y: -1.6502781, z: 11.8358135}
 --- !u!1 &1644418498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4533032269017348350, guid: 53cf64b47925b9e469fd9d45e267e277,
@@ -4772,7 +5839,7 @@ GameObject:
   - component: {fileID: 1710873301}
   - component: {fileID: 1710873300}
   - component: {fileID: 1710873299}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger1
   m_TagString: Pasillo
   m_Icon: {fileID: 0}
@@ -5114,7 +6181,7 @@ GameObject:
   - component: {fileID: 1923759497}
   - component: {fileID: 1923759496}
   - component: {fileID: 1923759495}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger7
   m_TagString: PlantaBaja
   m_Icon: {fileID: 0}
@@ -5307,7 +6374,7 @@ GameObject:
   - component: {fileID: 2025820289}
   - component: {fileID: 2025820288}
   - component: {fileID: 2025820287}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger5
   m_TagString: Oficina
   m_Icon: {fileID: 0}
@@ -5757,7 +6824,7 @@ PrefabInstance:
     - target: {fileID: 7855329210565947547, guid: bcb19f4a14864f54abbeb3230f3114de,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7855329210565947547, guid: bcb19f4a14864f54abbeb3230f3114de,
         type: 3}
