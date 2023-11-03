@@ -38,57 +38,6 @@ public class Subject_ActualRoom : MonoBehaviour, ISubject<float>
     private void OnTriggerEnter(Collider other)
     {
 
-        //////Mejor con un switch
-        //if (other.CompareTag("Habitacion")) 
-        //{
-        //    room = 1;
-        //}
-
-        //if (other.CompareTag("Pasillo"))
-        //{
-        //    room = 2;
-        //}
-
-        //if (other.CompareTag("Servicio"))
-        //{
-        //    room = 3;
-        //}
-
-        //if (other.CompareTag("Oficina"))
-        //{
-        //    room = 4;
-        //}
-
-        //if (other.CompareTag("PasilloP0"))
-        //{
-        //    room = 5;
-        //}
-
-        //if (other.CompareTag("Cocina"))
-        //{
-        //    room = 6;
-        //}
-
-        //if (other.CompareTag("Comedor"))
-        //{
-        //    room = 7;
-        //}
-
-        //if (other.CompareTag("Salon"))
-        //{
-        //    room = 8;
-        //}
-
-        //if (other.CompareTag("PlantaBaja"))
-        //{
-        //    room = 9;
-        //}
-
-        //if (other.CompareTag("Piso1"))
-        //{
-        //    room = 10;
-        //}
-
         switch (other.tag)
         {
             case "Habitacion":
