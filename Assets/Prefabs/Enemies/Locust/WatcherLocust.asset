@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b7bf578a2b7f843a6d8e9040ac71a5, type: 3}
   m_Name: WatcherLocust
   m_EditorClassIdentifier: 
-  speed: 1
-  scale: 0.5
-  Unaccuracy: 3
-  maxDistanceToTarget: 3
+  speed: 10
+  scale: 0.25
+  Unaccuracy: 1
+  maxDistanceToTarget: 0
   target: {fileID: 0}
