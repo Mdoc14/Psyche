@@ -57,7 +57,7 @@ public class lanternController : MonoBehaviour
         //Raycast desde la camera atraves de la posición del mouse.
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100))
+        if (Physics.Raycast(ray, out hit, 100,1<<3))
         {
             float angle=Vector3.SignedAngle(transform.forward, new Vector3(hit.point.x, transform.position.y, hit.point.z) - transform.position,Vector3.up);
             transform.Rotate(Vector3.up, angle * rotationSpeed * Time.deltaTime);
