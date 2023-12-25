@@ -12,6 +12,10 @@ public class WatcherController : MonoBehaviour
     private LocustInstantiator instantiator;
     public Transform center;
     public Transform head;
+    public float rotationSpeed;
+    private Transform actualTarget;
+    private Transform target1;
+    private Transform target2;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +23,10 @@ public class WatcherController : MonoBehaviour
         instantiator=GetComponent<LocustInstantiator>();
         instantiator.SpawnLocusts();
         instantiator.ChangeLocustsTarget(center);
-        headInitPos=head.position;
+        headInitPos=head.localPosition;
+        target1 = transform.Find("Target1");
+        target2 = transform.Find("Target2");
+        actualTarget = target1;
     }
     private void Update()
     {
@@ -27,7 +34,7 @@ public class WatcherController : MonoBehaviour
         {
             t-=Time.deltaTime;
         }
-        if (t >= 1.5f)
+        if (t >= 0.5f)
         {
             changed=true;
         }
@@ -35,14 +42,22 @@ public class WatcherController : MonoBehaviour
         {
             changed = false;
             instantiator.ChangeLocustsTarget(player);
+            instantiator.ChangeLocustsLethal(true);
         }
         if (seeing)
         {
-            head.transform.position=headInitPos+new Vector3(Random.Range(-0.1f,0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
+            head.localPosition=headInitPos+new Vector3(Random.Range(-0.1f,0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
         }
         else
         {
-            head.transform.position = headInitPos;
+            head.localPosition = headInitPos;
+            var q = Quaternion.LookRotation(actualTarget.position - head.position);
+            head.rotation = Quaternion.RotateTowards(head.rotation, q, rotationSpeed * Time.deltaTime);
+            if (Vector3.Angle(head.forward, actualTarget.position - head.position) < 5)
+            {
+                if (actualTarget == target1) { actualTarget = target2; }
+                else if (actualTarget == target2) { actualTarget = target1; }
+            }
         }
     }
 
@@ -53,7 +68,7 @@ public class WatcherController : MonoBehaviour
             if (!Physics.Linecast(head.position, player.position + Vector3.up * 0.75f,1<<0))
             {
                 seeing =true;
-                if (t < 1.5f)
+                if (t < 0.5f)
                 {
                     t += Time.deltaTime;
                 }

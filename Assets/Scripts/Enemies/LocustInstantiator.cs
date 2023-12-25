@@ -35,6 +35,17 @@ public class LocustInstantiator : MonoBehaviour
         }
     }
 
+    public void ChangeLocustsLethal(bool set)
+    {
+        foreach (GameObject locust in locustList)
+        {
+            if (locust != null)
+            {
+                locust.GetComponent<locustController>().locustParams.setLethal(set);
+            }
+        }
+    }
+
     public void DestroyLocust(float timeBetweenDestroy)
     {
         float d = 0;

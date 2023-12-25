@@ -8,24 +8,23 @@ public class locustController : MonoBehaviour
     private Rigidbody rb;
     private float t;
     private Vector3 r=new Vector3 (0,0,0);
-    private Transform cameraPos;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        cameraPos = Camera.main.transform;
         if (locustParams != null)
         {
             transform.localScale = Vector3.one * locustParams.scale;
+            locustParams.setCameraPos(Camera.main.transform);
         }
     }
 
     // Update is called once per frame
     private void Update()
     {
-        transform.LookAt(cameraPos);
         if(locustParams != null)
         {
+            transform.LookAt(locustParams.cameraPos);
             transform.localScale = Vector3.one * locustParams.scale;    
             if (locustParams.target != null)
             {
@@ -41,9 +40,18 @@ public class locustController : MonoBehaviour
                     rb.AddForce(r.normalized*(locustParams.speed/10), ForceMode.Impulse);
                     t = 0;
                 }
+                if (locustParams.lethal)
+                {
+                    if (locustParams.target.gameObject.CompareTag("Player"))
+                    {
+                        if ((transform.position - locustParams.target.position).magnitude < 0.5)
+                        {
+                            //Muerte del jugador
+                        }
+                    }
+                }
             }
         }
-
     }
     void FixedUpdate()
     {
