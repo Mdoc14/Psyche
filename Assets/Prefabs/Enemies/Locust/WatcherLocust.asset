@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WatcherLocust
   m_EditorClassIdentifier: 
   speed: 10
-  scale: 0.25
+  scale: 2
   Unaccuracy: 1
-  maxDistanceToTarget: 0
+  maxDistanceToTarget: 0.1
   target: {fileID: 0}

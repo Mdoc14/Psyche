@@ -8,10 +8,12 @@ public class locustController : MonoBehaviour
     private Rigidbody rb;
     private float t;
     private Vector3 r=new Vector3 (0,0,0);
+    private Transform cameraPos;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        cameraPos = Camera.main.transform;
         if (locustParams != null)
         {
             transform.localScale = Vector3.one * locustParams.scale;
@@ -21,6 +23,7 @@ public class locustController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        transform.LookAt(cameraPos);
         if(locustParams != null)
         {
             transform.localScale = Vector3.one * locustParams.scale;    
