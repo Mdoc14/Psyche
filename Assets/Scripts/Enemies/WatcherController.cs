@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WatcherController : MonoBehaviour
 {
+    public Light light;
     private Transform player;
     private Vector3 headInitPos;
     public bool seeing;
@@ -30,7 +31,19 @@ public class WatcherController : MonoBehaviour
     }
     private void Update()
     {
-        if(!seeing && t > 0)
+        if ((player.position - head.position).magnitude <= light.range && !Physics.Linecast(head.position, player.position + Vector3.up * 0.75f, 1 << 0)) 
+        {
+            seeing = true;
+            if (t < 0.5f)
+            {
+                t += Time.deltaTime;
+            }
+        }
+        else
+        {
+            seeing = false;
+        }
+        if (!seeing && t > 0)
         {
             t-=Time.deltaTime;
         }
@@ -46,7 +59,7 @@ public class WatcherController : MonoBehaviour
         }
         if (seeing)
         {
-            head.localPosition=headInitPos+new Vector3(Random.Range(-0.1f,0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
+            head.localPosition=headInitPos+new Vector3(Random.Range(-0.025f, 0.025f), Random.Range(-0.025f, 0.025f), Random.Range(-0.025f, 0.025f));
         }
         else
         {
@@ -58,32 +71,6 @@ public class WatcherController : MonoBehaviour
                 if (actualTarget == target1) { actualTarget = target2; }
                 else if (actualTarget == target2) { actualTarget = target1; }
             }
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (!Physics.Linecast(head.position, player.position + Vector3.up * 0.75f,1<<0))
-            {
-                seeing =true;
-                if (t < 0.5f)
-                {
-                    t += Time.deltaTime;
-                }
-            }
-            else
-            {
-                seeing =false;
-            }
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            seeing = false;
         }
     }
 }
