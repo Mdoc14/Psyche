@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headLight: {fileID: 1690580904367321634}
   timeToChange: 0.001
-  timeUntilLethal: 2
+  timeUntilLethal: 1
   center: {fileID: 3331235642060547118}
   head: {fileID: 556268068953776965}
   rotationSpeed: 30

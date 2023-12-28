@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    private float t;
+    private float initMagnitude;
+    private float initDeviation;
     public Vector3 relativePos;
     public bool die;
     public float dieSpeed;
@@ -23,6 +26,8 @@ public class CameraFollow : MonoBehaviour
         }
         //posici?n relativa al objetivo inicialmente
         relativePos = transform.position - target.position;
+        initMagnitude = (transform.position - target.position).magnitude;
+        initDeviation = lanternDeviation;
     }
 
     // Update is called once per frame
@@ -32,19 +37,23 @@ public class CameraFollow : MonoBehaviour
         {
             nextPosition = target.position + relativePos + lantern.forward * lanternDeviation;
         }
-        transform.position = nextPosition;
-
-        if (die)
-        {
-            if(transform.eulerAngles.x > 1)
-            {
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x - Time.deltaTime * dieSpeed, 0, 0);
-            }
-        }
         else
         {
-            transform.eulerAngles = new Vector3(45, 0, 0);
+            if((transform.position-target.position).magnitude>initMagnitude/2)
+            {
+                if (lanternDeviation > 0)
+                {
+                    lanternDeviation -= Time.deltaTime * dieSpeed / 4;
+                }
+                else
+                {
+                    lanternDeviation = 0;
+                }
+                t += Time.deltaTime * dieSpeed;
+                nextPosition = target.position + relativePos + lantern.forward * lanternDeviation + transform.forward * t;
+            }
         }
+        transform.position = nextPosition;
     }
 
     public void DieAnimation()
@@ -56,6 +65,8 @@ public class CameraFollow : MonoBehaviour
     public void CamResetDeath()
     {
         die = false;
+        lanternDeviation = initDeviation;
+        t = 0;
     }
 }
 
