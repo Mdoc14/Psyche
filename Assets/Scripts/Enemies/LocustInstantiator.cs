@@ -9,7 +9,13 @@ public class LocustInstantiator : MonoBehaviour
     public GameObject locustObject;
     public int locustNumber;
     public Transform initialTarget;
+    private Transform newTarget;
     // Start is called before the first frame update
+    public struct DataEnum
+    {
+        public Transform newTarget;
+        public float time;
+    }
     public void SpawnLocusts()
     {
         for(int i = 0; i < locustNumber; i++)
@@ -20,19 +26,28 @@ public class LocustInstantiator : MonoBehaviour
             GameObject locust= Instantiate(locustObject,transform.position+new Vector3(a,b,c),new Quaternion(0,0,0,0));
             locustList.Add(locust);
             locust.GetComponent<locustController>().locustParams = locustParams;
-            locust.GetComponent<locustController>().locustParams.changeTarget(initialTarget);
         }
+        ChangeLocustsTarget(initialTarget);
+
     }
-    
-    public void ChangeLocustsTarget(Transform newTarget)
+
+    public void ChangeLocustsTarget(Transform target)
     {
-        foreach(GameObject locust in locustList)
+        newTarget = target;
+        foreach (GameObject locust in locustList)
         {
             if (locust != null)
             {
-                locust.GetComponent<locustController>().locustParams.changeTarget(newTarget);
+                locust.GetComponent<locustController>().changeTarget(newTarget);
             }
         }
+    }
+
+    public void ChangeOneLocustsTarget(Transform target,int locustNumber)
+    {
+        newTarget = target;
+
+        locustList[locustNumber].GetComponent<locustController>().changeTarget(newTarget);
     }
 
     public void ChangeLocustsLethal(bool set)
@@ -57,6 +72,23 @@ public class LocustInstantiator : MonoBehaviour
             {
                 d += timeBetweenDestroy;
             }
+        }
+    }
+
+    public int GetLenght()
+    {
+        return locustList.Count;
+    }
+
+    public void ResetLocustPos()
+    {
+        foreach (GameObject locust in locustList)
+        {
+            float a = Random.Range(-locustParams.Unaccuracy, locustParams.Unaccuracy);
+            float b = Random.Range(-locustParams.Unaccuracy, locustParams.Unaccuracy);
+            float c = Random.Range(-locustParams.Unaccuracy, locustParams.Unaccuracy);
+            locust.transform.position =  locust.GetComponent<locustController>().target.position+ new Vector3(a,b,c);
+            locust.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
 }

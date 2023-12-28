@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Vector3 respawnPoint; 
     private Rigidbody rb;
     public float speed = 10.0f;
     public Vector3 direction;
@@ -11,11 +12,16 @@ public class PlayerController : MonoBehaviour
     private float turnSmoothVelocity;
     public bool canWalk;
     public bool falling;
+    public bool dead;
+    private CameraFollow cam;
 
     private void Start()
     {
         //Accedemos al rigidbody;
         rb = GetComponent<Rigidbody>();
+        //Accedemos a la camara
+        cam=Camera.main.GetComponent<CameraFollow>();
+        respawnPoint=transform.position;
     }
 
     void FixedUpdate()
@@ -63,14 +69,22 @@ public class PlayerController : MonoBehaviour
             if (hit.distance < 0.25f)//Se comprueba si el punto detectado est? suficientemente cerca
             {
                 falling = false;
-                if (hit.transform.CompareTag("Walkable"))//Se comprueba si la superficie tiene la tag "Walkable" para ver si se deberia andar sobre ella
+                if (!dead)
                 {
-                    canWalk = true;
+                    if (hit.transform.CompareTag("Walkable"))//Se comprueba si la superficie tiene la tag "Walkable" para ver si se deberia andar sobre ella
+                    {
+                        canWalk = true;
+                    }
+                    else
+                    {
+                        canWalk = false;
+                    }
                 }
                 else
                 {
                     canWalk = false;
                 }
+
             }
             else
             {
@@ -82,6 +96,29 @@ public class PlayerController : MonoBehaviour
             falling = true;
             canWalk = false;
         }
+    }
+
+    public void Die()
+    {
+        if (!dead)
+        {
+            cam.DieAnimation();
+            dead = true;
+            Invoke("Respawn", 3.5f);
+        }
+    }
+
+    private void Respawn()
+    {
+        transform.position = respawnPoint;
+        cam.CamResetDeath();
+        Invoke("SetAlive", 0.5f);
+
+    }
+
+    private void SetAlive()
+    {
+        dead = false;
     }
 }
 

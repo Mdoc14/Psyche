@@ -306,6 +306,7 @@ MonoBehaviour:
   turnSmoothTime: 0.1
   canWalk: 0
   falling: 0
+  dead: 0
 --- !u!54 &3489473150807107608
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -383,8 +384,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7754684204538959971}
-  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 10, z: -10}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 5.5, z: -4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -507,6 +508,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relativePos: {x: 0, y: 0, z: 0}
+  die: 0
+  dieSpeed: 20
   target: {fileID: 1519832275771152880}
   lantern: {fileID: 649060981862488095}
   lanternDeviation: 1

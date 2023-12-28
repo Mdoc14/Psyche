@@ -16,4 +16,5 @@ MonoBehaviour:
   scale: 2
   Unaccuracy: 1
   maxDistanceToTarget: 0.1
-  target: {fileID: 0}
+  lethal: 0
+  cameraPos: {fileID: 0}

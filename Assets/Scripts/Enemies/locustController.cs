@@ -8,6 +8,7 @@ public class locustController : MonoBehaviour
     private Rigidbody rb;
     private float t;
     private Vector3 r=new Vector3 (0,0,0);
+    public Transform target;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class locustController : MonoBehaviour
         {
             transform.LookAt(locustParams.cameraPos);
             transform.localScale = Vector3.one * locustParams.scale;    
-            if (locustParams.target != null)
+            if (target != null)
             {
                 if (t <= (1+locustParams.Unaccuracy))
                 {
@@ -42,11 +43,12 @@ public class locustController : MonoBehaviour
                 }
                 if (locustParams.lethal)
                 {
-                    if (locustParams.target.gameObject.CompareTag("Player"))
+                    if (target.gameObject.CompareTag("Player"))
                     {
-                        if ((transform.position - locustParams.target.position).magnitude < 0.5)
+                        if ((transform.position - target.position).magnitude < 0.5)
                         {
-                            //Muerte del jugador
+                            target.SendMessage("Die");
+                            locustParams.setLethal(false);
                         }
                     }
                 }
@@ -57,15 +59,20 @@ public class locustController : MonoBehaviour
     {
         if (locustParams != null)
         {
-            if (locustParams.target != null)
+            if (target != null)
             {
 
-                if ((locustParams.target.position + r - transform.position).magnitude > locustParams.maxDistanceToTarget)
+                if ((target.position + r - transform.position).magnitude > locustParams.maxDistanceToTarget)
                 {
-                    rb.AddForce((locustParams.target.position + r - transform.position).normalized*locustParams.speed, ForceMode.Force);
-                    rb.AddForce((locustParams.target.position - transform.position).normalized*(locustParams.speed* (locustParams.target.position - transform.position).magnitude), ForceMode.Force);
+                    rb.AddForce((target.position + r - transform.position).normalized*locustParams.speed, ForceMode.Force);
+                    rb.AddForce((target.position - transform.position).normalized*(locustParams.speed* (target.position - transform.position).magnitude), ForceMode.Force);
                 }
             }
         }
+    }
+
+    public void changeTarget(Transform newTarget)
+    {
+        target = newTarget;
     }
 }

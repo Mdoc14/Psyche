@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class WatcherController : MonoBehaviour
 {
-    public Light light;
+    private bool catched;
+    private int i;
+    public Light headLight;
     private Transform player;
     private Vector3 headInitPos;
-    public bool seeing;
-    private bool changed;
-    public float t=0;
+    private bool seeing;
+    private float t=0;
+    private float t2=0;
+    private float t3=0;
+    public float timeToChange;
+    public float timeUntilLethal;
     private LocustInstantiator instantiator;
     public Transform center;
     public Transform head;
@@ -31,12 +36,16 @@ public class WatcherController : MonoBehaviour
     }
     private void Update()
     {
-        if ((player.position - head.position).magnitude <= light.range && !Physics.Linecast(head.position, player.position + Vector3.up * 0.75f, 1 << 0)) 
+        if ((player.position - head.position).magnitude <= headLight.range && !Physics.Linecast(head.position, player.position + Vector3.up * 0.75f, 1 << 0)) 
         {
             seeing = true;
             if (t < 0.5f)
             {
                 t += Time.deltaTime;
+            }
+            else
+            {
+                catched = true;
             }
         }
         else
@@ -47,17 +56,27 @@ public class WatcherController : MonoBehaviour
         {
             t-=Time.deltaTime;
         }
-        if (t >= 0.5f)
+        if (catched)
         {
-            changed=true;
+            t2 += Time.deltaTime;
+            t3 += Time.deltaTime;
+            if (t2 >= timeToChange)
+            {
+                i++;
+                t2 = 0;
+                instantiator.ChangeOneLocustsTarget(player, i);
+                if (t3 > timeUntilLethal)
+                {
+                    instantiator.ChangeLocustsLethal(true);
+                    Invoke("ChangeBack", 2f);
+                    t2 = 0;
+                    t3 = 0;
+                    t = 0;
+                    i = 0;
+                }
+            }
         }
-        if (changed == true)
-        {
-            changed = false;
-            instantiator.ChangeLocustsTarget(player);
-            instantiator.ChangeLocustsLethal(true);
-        }
-        if (seeing)
+        if (seeing || catched)
         {
             head.localPosition=headInitPos+new Vector3(Random.Range(-0.025f, 0.025f), Random.Range(-0.025f, 0.025f), Random.Range(-0.025f, 0.025f));
         }
@@ -71,6 +90,15 @@ public class WatcherController : MonoBehaviour
                 if (actualTarget == target1) { actualTarget = target2; }
                 else if (actualTarget == target2) { actualTarget = target1; }
             }
+
         }
+    }
+
+    private void ChangeBack()
+    {
+        instantiator.ChangeLocustsTarget(center);
+        instantiator.ChangeLocustsLethal(false);
+        instantiator.ResetLocustPos();
+        catched = false;
     }
 }
