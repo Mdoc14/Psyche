@@ -45,7 +45,7 @@ public class locustController : MonoBehaviour
                 {
                     if (target.gameObject.CompareTag("Player"))
                     {
-                        if ((transform.position - target.position).magnitude < 0.5)
+                        if ((transform.position - (target.position + Vector3.up)).magnitude < 0.5)
                         {
                             target.SendMessage("Die");
                             locustParams.setLethal(false);
@@ -62,10 +62,10 @@ public class locustController : MonoBehaviour
             if (target != null)
             {
 
-                if ((target.position + r - transform.position).magnitude > locustParams.maxDistanceToTarget)
+                if ((target.position + r + Vector3.up - transform.position).magnitude > locustParams.maxDistanceToTarget)
                 {
-                    rb.AddForce((target.position + r - transform.position).normalized*locustParams.speed, ForceMode.Force);
-                    rb.AddForce((target.position - transform.position).normalized*(locustParams.speed* (target.position - transform.position).magnitude), ForceMode.Force);
+                    rb.AddForce((target.position + r +Vector3.up - transform.position).normalized*locustParams.speed, ForceMode.Force);
+                    rb.AddForce((target.position + Vector3.up - transform.position).normalized*(locustParams.speed* (target.position - transform.position).magnitude), ForceMode.Force);
                 }
             }
         }

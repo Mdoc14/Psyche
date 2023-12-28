@@ -13,6 +13,7 @@ public class WatcherController : MonoBehaviour
     private float t=0;
     private float t2=0;
     private float t3=0;
+    public float detectionTime;
     public float timeToChange;
     public float timeUntilLethal;
     private LocustInstantiator instantiator;
@@ -36,10 +37,10 @@ public class WatcherController : MonoBehaviour
     }
     private void Update()
     {
-        if ((player.position - head.position).magnitude <= headLight.range && !Physics.Linecast(head.position, player.position + Vector3.up * 0.75f, 1 << 0)) 
+        if ((player.position - head.position).magnitude <= headLight.range && !Physics.Linecast(head.position, player.position + Vector3.up * 0.75f, 1 << 0)&& !player.GetComponent<PlayerController>().dead) 
         {
             seeing = true;
-            if (t < 0.5f)
+            if (t < detectionTime)
             {
                 t += Time.deltaTime;
             }
@@ -96,6 +97,10 @@ public class WatcherController : MonoBehaviour
 
     private void ChangeBack()
     {
+        t2 = 0;
+        t3 = 0;
+        t = 0;
+        i = 0;
         instantiator.ChangeLocustsTarget(center);
         instantiator.ChangeLocustsLethal(false);
         instantiator.ResetLocustPos();

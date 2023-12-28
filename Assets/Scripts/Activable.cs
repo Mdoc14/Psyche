@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class Activable : MonoBehaviour
 {
+    private PlayerController playerController;
+    public bool onlyOnce;
+    public int neededKeys;
     private float t;
     public GameObject affectedObject; //El objeto al que le afectara esta interacción
     public GameObject indicator; //Indicador InGame de que se puede interactuar
+    public GameObject conditionIndicator; //Indicador InGame de lo que se necesita para poder interactuar
     public bool onRange; //Si el jugador esta en rango para interactuar
     private void Start()
     {
         indicator.SetActive(false);
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
     private void Update()
     {
@@ -26,6 +31,7 @@ public class Activable : MonoBehaviour
             }
             if (onRange && Input.GetKey(KeyCode.E))
             {
+                playerController.loseKeys(neededKeys);
                 t = 0;
                 //Informar al objeto afectado
                 if (affectedObject.GetComponent<Animator>() != null)
@@ -35,8 +41,16 @@ public class Activable : MonoBehaviour
                 else
                 {
                     affectedObject.SendMessage("Activate");
+                    if (onlyOnce)
+                    {
+                        indicator.SetActive(false);
+                        Destroy(gameObject);
+                    }
                 }
-                indicator.SetActive(false);
+                if (!onlyOnce)
+                {
+                    indicator.SetActive(false);
+                }
             }
         }
     }
@@ -44,7 +58,22 @@ public class Activable : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            onRange = true;
+            if (other.GetComponent<PlayerController>().keyNumber >= neededKeys)
+            {
+                onRange = true;
+                if (conditionIndicator != null)
+                {
+                    conditionIndicator.SetActive(false);
+                }
+            }
+            else
+            {
+                onRange = false;
+                if (conditionIndicator != null)
+                {
+                    conditionIndicator.SetActive(true);
+                }
+            }
         }
     }
     private void OnTriggerExit(Collider other)
@@ -52,6 +81,10 @@ public class Activable : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             onRange = false;
+            if (conditionIndicator != null)
+            {
+                conditionIndicator.SetActive(false);
+            }
         }
     }
 }

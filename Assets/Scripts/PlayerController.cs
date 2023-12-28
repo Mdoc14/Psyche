@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject[] keyIndicators;
+    public int keyNumber;
     private Vector3 respawnPoint; 
     private Rigidbody rb;
     public float speed = 10.0f;
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
         //Accedemos a la camara
         cam=Camera.main.GetComponent<CameraFollow>();
         respawnPoint=transform.position;
+        loseKeys(3);
     }
 
     void FixedUpdate()
@@ -104,6 +107,7 @@ public class PlayerController : MonoBehaviour
         {
             cam.DieAnimation();
             dead = true;
+            keyNumber = 0;
             Invoke("Respawn", 3.5f);
         }
     }
@@ -119,6 +123,79 @@ public class PlayerController : MonoBehaviour
     private void SetAlive()
     {
         dead = false;
+    }
+
+    public void setRespawn(Vector3 pos)
+    {
+        respawnPoint = pos;
+    }
+
+    public void GetKey()
+    {
+        keyNumber++;
+        if (keyNumber >= 1)
+        {
+            keyIndicators[0].SetActive(true);
+            if (keyNumber >= 2)
+            {
+                keyIndicators[1].SetActive(true);
+                if (keyNumber >= 3)
+                {
+                    keyIndicators[2].SetActive(true);
+                }
+                else
+                {
+                    keyIndicators[2].SetActive(false);
+                }
+            }
+            else
+            {
+                keyIndicators[1].SetActive(false);
+                keyIndicators[2].SetActive(false);
+            }
+        }
+        else
+        {
+            keyIndicators[0].SetActive(false);
+            keyIndicators[1].SetActive(false);
+            keyIndicators[2].SetActive(false);
+        }
+    }
+
+    public void loseKeys(int cuantity)
+    {
+        keyNumber-= cuantity;
+        if (keyNumber < 0)
+        {
+            keyNumber = 0;
+        }
+        if (keyNumber >= 1)
+        {
+            keyIndicators[0].SetActive(true);
+            if (keyNumber >= 2)
+            {
+                keyIndicators[1].SetActive(true);
+                if (keyNumber >= 3)
+                {
+                    keyIndicators[2].SetActive(true);
+                }
+                else
+                {
+                    keyIndicators[2].SetActive(false);
+                }
+            }
+            else
+            {
+                keyIndicators[1].SetActive(false);
+                keyIndicators[2].SetActive(false);
+            }
+        }
+        else
+        {
+            keyIndicators[0].SetActive(false);
+            keyIndicators[1].SetActive(false);
+            keyIndicators[2].SetActive(false);
+        }
     }
 }
 
