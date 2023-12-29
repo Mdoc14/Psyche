@@ -117,7 +117,7 @@ MonoBehaviour:
   headLight: {fileID: 1690580904367321634}
   detectionTime: 0.5
   timeToChange: 0.001
-  timeUntilLethal: 1
+  timeUntilLethal: 0.5
   center: {fileID: 4257927783451690901}
   head: {fileID: 556268068953776965}
   rotationSpeed: 30
@@ -216,7 +216,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

@@ -37,6 +37,11 @@ public class Activable : MonoBehaviour
                 if (affectedObject.GetComponent<Animator>() != null)
                 {
                     affectedObject.GetComponent<Animator>().SetTrigger("Activate");
+                    if (onlyOnce)
+                    {
+                        indicator.SetActive(false);
+                        Destroy(gameObject);
+                    }
                 }
                 else
                 {
