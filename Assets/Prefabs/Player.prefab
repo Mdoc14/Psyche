@@ -585,6 +585,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379ee90b21f3f904f827fe3d9da3e354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyIndicators:
+  - {fileID: 115618589563826954}
+  - {fileID: 2926185433360656900}
+  - {fileID: 3981534544377245699}
   keyNumber: 0
   speed: 5
   direction: {x: 0, y: 0, z: 0}

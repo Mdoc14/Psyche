@@ -136,7 +136,7 @@ MonoBehaviour:
   locustParams: {fileID: 11400000, guid: dc4acca45ae49e44ca19214379375104, type: 2}
   locustObject: {fileID: 2771675200921336091, guid: 8cfc867c4bca5bb4db5c88cfd9fae77a,
     type: 3}
-  locustNumber: 500
+  locustNumber: 100
   initialTarget: {fileID: 4257927783451690901}
 --- !u!54 &1366274657636994865
 Rigidbody:

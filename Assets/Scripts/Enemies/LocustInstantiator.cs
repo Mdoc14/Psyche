@@ -45,9 +45,16 @@ public class LocustInstantiator : MonoBehaviour
 
     public void ChangeOneLocustsTarget(Transform target,int locustNumber)
     {
-        newTarget = target;
 
-        locustList[locustNumber].GetComponent<locustController>().changeTarget(newTarget);
+        if (locustNumber < locustList.Count)
+        {
+            if (locustList[locustNumber] != null)
+            {
+                newTarget = target;
+
+                locustList[locustNumber].GetComponent<locustController>().changeTarget(newTarget);
+            }
+        }
     }
 
     public void ChangeLocustsLethal(bool set)

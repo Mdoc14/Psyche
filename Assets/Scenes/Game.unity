@@ -699,12 +699,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1751117249619782360}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &349023084 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3981534544377245699, guid: ad506a0a44c62474d974aa934f3df6b5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2694373013271080751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &421132587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,12 +1201,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.007636, y: 3.30386, z: 0.17739801}
   m_Center: {x: -6.4997845, y: 1.49606, z: -2.9445388}
---- !u!1 &632950731 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2926185433360656900, guid: ad506a0a44c62474d974aa934f3df6b5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2694373013271080751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!65 &643215049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4956,12 +4944,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.9803514, y: 0.14824998, z: 0.20132594}
   m_Center: {x: -7.340681, y: 1.3048699, z: 2.8377047}
---- !u!1 &1505080614 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 115618589563826954, guid: ad506a0a44c62474d974aa934f3df6b5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2694373013271080751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1510753820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6204,26 +6186,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6395382479560216504, guid: ad506a0a44c62474d974aa934f3df6b5,
-        type: 3}
-      propertyPath: keyIndicators.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395382479560216504, guid: ad506a0a44c62474d974aa934f3df6b5,
-        type: 3}
-      propertyPath: keyIndicators.Array.data[0]
-      value: 
-      objectReference: {fileID: 1505080614}
-    - target: {fileID: 6395382479560216504, guid: ad506a0a44c62474d974aa934f3df6b5,
-        type: 3}
-      propertyPath: keyIndicators.Array.data[1]
-      value: 
-      objectReference: {fileID: 632950731}
-    - target: {fileID: 6395382479560216504, guid: ad506a0a44c62474d974aa934f3df6b5,
-        type: 3}
-      propertyPath: keyIndicators.Array.data[2]
-      value: 
-      objectReference: {fileID: 349023084}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

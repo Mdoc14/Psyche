@@ -16,7 +16,7 @@ public class lanternController : MonoBehaviour
     private void Start()
     {
         t2 = Random.Range(0.25f, blinkingTime);
-        On = true;
+        On = false;
         player = transform.parent;
         transform.parent = null;
         lantern = GetComponent<Light>();
@@ -48,10 +48,10 @@ public class lanternController : MonoBehaviour
             //    t2 = Random.Range(0.25f, blinkingTime);
             //}
             ////
-            if (lantern.intensity < initIntensity)
-            {
-                lantern.intensity += Time.deltaTime * initIntensity * 25;
-            }
+            //if (lantern.intensity < initIntensity)
+            //{
+            //    lantern.intensity += Time.deltaTime * initIntensity * 25;
+            //}
         }
         transform.position = player.position;
         //Raycast desde la camera atraves de la posición del mouse.
@@ -62,10 +62,10 @@ public class lanternController : MonoBehaviour
             float angle=Vector3.SignedAngle(transform.forward, new Vector3(hit.point.x, transform.position.y, hit.point.z) - transform.position,Vector3.up);
             transform.Rotate(Vector3.up, angle * rotationSpeed * Time.deltaTime);
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            On = !On;
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    On = !On;
+        //}
     }
 
     private void LanternOn()

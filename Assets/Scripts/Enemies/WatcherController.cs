@@ -37,7 +37,7 @@ public class WatcherController : MonoBehaviour
     }
     private void Update()
     {
-        if ((player.position - head.position).magnitude <= headLight.range && !Physics.Linecast(head.position, player.position + Vector3.up * 0.75f, 1 << 0)&& !player.GetComponent<PlayerController>().dead) 
+        if ((player.position - head.position).magnitude <= headLight.range && !Physics.Linecast(headLight.transform.position, player.position + Vector3.up * 0.25f, 1 << 0)&& !player.GetComponent<PlayerController>().dead) 
         {
             seeing = true;
             if (t < detectionTime)
@@ -55,7 +55,7 @@ public class WatcherController : MonoBehaviour
         }
         if (!seeing && t > 0)
         {
-            t-=Time.deltaTime;
+            t-=Time.deltaTime/3;
         }
         if (catched)
         {
