@@ -18,7 +18,7 @@ public class AudioController : MonoBehaviour
     {
         if (!audioSource.isPlaying)
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("HouseScene");
         }
     }
 }
