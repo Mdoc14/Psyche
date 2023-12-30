@@ -45,7 +45,7 @@ public class locustController : MonoBehaviour
                 {
                     if (target.gameObject.CompareTag("Player"))
                     {
-                        if ((transform.position - (target.position + Vector3.up)).magnitude < 0.5)
+                        if ((transform.position - (target.position + Vector3.up)).magnitude < 1)
                         {
                             target.SendMessage("Die");
                             locustParams.setLethal(false);
