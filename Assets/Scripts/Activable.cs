@@ -16,6 +16,10 @@ public class Activable : MonoBehaviour
     {
         indicator.SetActive(false);
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        if (conditionIndicator != null)
+        {
+            conditionIndicator.SetActive(false);
+        }
     }
     private void Update()
     {
