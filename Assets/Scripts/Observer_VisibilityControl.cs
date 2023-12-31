@@ -63,21 +63,26 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
     //Recorre la lista y pone en false el atributo "enabled" del MeshRenderer. Ocultando los GameObject/Paredes que no queremos que se vean 
     public void visibilityOff(List<GameObject> lista)
     {
-        foreach (GameObject obj in lista)
+        if (lista != null)
         {
-            obj.GetComponent<MeshRenderer>().enabled = false;
-            if (obj.CompareTag("Walkable") || obj.CompareTag("LanternPos"))//Para el funcionamiento de la linterna
+            foreach (GameObject obj in lista)
             {
-                if (obj.GetComponent<BoxCollider>() != null)
+                if(obj!=null)
+                obj.GetComponent<MeshRenderer>().enabled = false;
+                if (obj.CompareTag("Walkable") || obj.CompareTag("LanternPos"))//Para el funcionamiento de la linterna
                 {
-                    obj.GetComponent<BoxCollider>().enabled = false;
-                }
-                else if (obj.GetComponent<MeshCollider>() != null)
-                {
-                    obj.GetComponent<MeshCollider>().enabled = false;
+                    if (obj.GetComponent<BoxCollider>() != null)
+                    {
+                        obj.GetComponent<BoxCollider>().enabled = false;
+                    }
+                    else if (obj.GetComponent<MeshCollider>() != null)
+                    {
+                        obj.GetComponent<MeshCollider>().enabled = false;
+                    }
                 }
             }
         }
+
     }
 
     //Recorre la lista y pone en true el atributo "enabled" del MeshRenderer. Mostrando los GameObject/Paredes que queremos que se vean
