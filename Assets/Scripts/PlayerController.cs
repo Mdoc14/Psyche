@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         //Accedemos a la camara
         cam=Camera.main.GetComponent<CameraFollow>();
         respawnPoint=transform.position;
-        modelTransform = transform.Find("Model").Find("Character"); //Refencia al transform del modelo 3D
+        modelTransform = transform.Find("Model").Find("Character2"); //Refencia al transform del modelo 3D
         animator = modelTransform.GetComponent<Animator>(); //Referencia al animator
         loseKeys(3);
         initmodelRotation = modelTransform.localRotation;
