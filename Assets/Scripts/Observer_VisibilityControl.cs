@@ -35,6 +35,7 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
     //Listas con todos los objetos de cada piso, incluyendo suelos y paredes, esto para hacer los cambios de un piso a otro
     public List<GameObject> piso1GameObjects = new List<GameObject>();
     public List<GameObject> piso0GameObjects = new List<GameObject>();
+    public List<GameObject> gardenGameObjects = new List<GameObject>();
 
     private void Awake()
     {
@@ -43,6 +44,9 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
 
         //Ocultamos la planta baja para que esta no se vea desde arriba
         visibilityOff(piso0GameObjects);
+
+        //Ocultamos el jardin
+        visibilityOff(gardenGameObjects);
 
         //Ocultamos las paredes de la habitacion donde aparece el jugador
         visibilityOff(habitacionParedes);
@@ -199,6 +203,30 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
                 //Ocultamos los GameObject/Paredes de la sala actual y mostramos los muros del mismo
                 visibilityOff(salaActualSinParedes);
                 visibilityOn(salaActualConMuros);
+                break;
+
+            case 11: //Cambio de entorno: Jardin
+
+                visibilityOff(piso0GameObjects);
+                visibilityOff(salaActualConMuros);
+                visibilityOn(gardenGameObjects);
+                salaActualConMuros = null;
+                salaActualSinParedes = null;
+                break;
+
+            case 12:    //Cambio de entorno: Salon desde el Jardin
+                if (salaActualConMuros == null && salaActualSinParedes == null)
+                {
+                    visibilityOff(gardenGameObjects);
+                    visibilityOn(piso0GameObjects);
+
+                    salaActualSinParedes = salonParedes;
+                    salaActualConMuros = salonMuros;
+
+                    visibilityOff(salaActualSinParedes);
+                    visibilityOn(salaActualConMuros);
+                }
+
                 break;
 
             default:

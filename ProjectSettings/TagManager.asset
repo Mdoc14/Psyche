@@ -16,6 +16,8 @@ TagManager:
   - PlantaBaja
   - Piso1
   - LanternPos
+  - Jardin
+  - SalonJardin
   layers:
   - Default
   - TransparentFX

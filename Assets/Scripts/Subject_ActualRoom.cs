@@ -70,6 +70,12 @@ public class Subject_ActualRoom : MonoBehaviour, ISubject<float>
             case "Piso1":
                 room = 10;
                 break;
+            case "Jardin":
+                room = 11;
+                break;
+            case "SalonJardin":
+                room = 12;
+                break;
         }
         NotifyObservers();
 
