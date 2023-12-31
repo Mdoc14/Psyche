@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public bool falling;
     public bool dead;
     private CameraFollow cam;
+    private Animator animator;
+    Transform modelTransform;
 
     private void Start()
     {
@@ -24,6 +26,8 @@ public class PlayerController : MonoBehaviour
         //Accedemos a la camara
         cam=Camera.main.GetComponent<CameraFollow>();
         respawnPoint=transform.position;
+        modelTransform = transform.Find("Model").Find("Character"); //Refencia al transform del modelo 3D
+        animator = modelTransform.GetComponent<Animator>(); //Referencia al animator
         loseKeys(3);
     }
 
@@ -59,6 +63,18 @@ public class PlayerController : MonoBehaviour
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        }
+
+        /////ANIMACION////////
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W))
+        {
+            animator.SetBool("Idle", false);
+            animator.SetBool("Walking", true);
+        }
+        else
+        {
+            animator.SetBool("Idle", true);
+            animator.SetBool("Walking", false);
         }
     }
 
@@ -106,6 +122,9 @@ public class PlayerController : MonoBehaviour
         if (!dead)
         {
             cam.DieAnimation();
+            animator.SetBool("Idle", false);     //Boleanos de control de las animaciones para que se eejcuten correctamente
+            animator.SetBool("Walking", false);
+            animator.SetBool("Dead", true);
             dead = true;
             keyNumber = 0;
             Invoke("Respawn", 3.5f);
@@ -114,6 +133,10 @@ public class PlayerController : MonoBehaviour
 
     private void Respawn()
     {
+        animator.SetBool("Dead", false);    //Boleanos de control de las animaciones para que se eejcuten correctamente
+        animator.SetBool("Idle", true);
+        modelTransform.position = transform.position;   //Hacemos coincidir la posicion del modelo con la de su contenedor ya que la posicion del modelo cambia en las animaciones
+        modelTransform.localRotation = Quaternion.Euler(0f, 180f, 0f);  //Reiniciamos su rotacion
         transform.position = respawnPoint;
         cam.CamResetDeath();
         Invoke("SetAlive", 0.5f);
