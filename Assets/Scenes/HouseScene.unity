@@ -1278,6 +1278,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimpleDoor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8535611925368779235, guid: 513499cd1dfd28146b3048af63552de7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7732,7 +7737,8 @@ PrefabInstance:
       value: -0.829
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6592401360930831907, guid: bda31006a7e44a04cb45dd9c2121b974, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: bda31006a7e44a04cb45dd9c2121b974,
         type: 3}

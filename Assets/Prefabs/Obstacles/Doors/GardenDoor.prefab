@@ -265,6 +265,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2912708158029186702}
     m_Modifications:
+    - target: {fileID: 128260635659253129, guid: ef784868dd9481b4592b916f84b0a63a,
+        type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 128260635659253129, guid: ef784868dd9481b4592b916f84b0a63a,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 990798948088425212, guid: ef784868dd9481b4592b916f84b0a63a,
         type: 3}
       propertyPath: m_RootOrder
@@ -355,6 +365,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2912708158029186702}
     m_Modifications:
+    - target: {fileID: 135552493546473665, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
+        type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 135552493546473665, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1001556673087084468, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
         type: 3}
       propertyPath: m_RootOrder
@@ -439,6 +459,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Interactuable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8437079009112139378, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
+        type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8437079009112139378, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

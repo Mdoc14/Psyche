@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     public bool dead;
     private CameraFollow cam;
     private Animator animator;
-    Transform modelTransform;
+    private Transform modelTransform;
+    private Quaternion initmodelRotation;
 
     private void Start()
     {
@@ -29,10 +30,16 @@ public class PlayerController : MonoBehaviour
         modelTransform = transform.Find("Model").Find("Character"); //Refencia al transform del modelo 3D
         animator = modelTransform.GetComponent<Animator>(); //Referencia al animator
         loseKeys(3);
+        initmodelRotation = modelTransform.localRotation;
     }
 
     void FixedUpdate()
     {
+        if (!dead)
+        {
+            modelTransform.localPosition = Vector3.zero;
+            modelTransform.transform.localRotation = initmodelRotation;
+        }
         //Comprovaci?n de suelo
         CheckGround();
 
@@ -58,7 +65,7 @@ public class PlayerController : MonoBehaviour
         }
 
         ///////ROTACI?N////////
-        if (direction.magnitude != 0)
+        if (direction.magnitude > 0 && !dead)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
