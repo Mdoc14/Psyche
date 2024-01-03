@@ -33,7 +33,14 @@ public class NextSceneController : MonoBehaviour
     private void LoadNextScene()
     {
         changeFadeAnimator.ResetTrigger("BlackOut");
-        SceneManager.LoadScene("StreetScene");
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            SceneManager.LoadScene("StreetScene");
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 3) 
+        {
+            SceneManager.LoadScene("HospitalScene");
+        }
     }
 
     public void OnTriggerEnter(Collider other)
