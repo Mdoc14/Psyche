@@ -29,16 +29,6 @@ public class TutorialsManager : MonoBehaviour
         {
             currentTutorial.GetComponent<Image>().sprite = tutorialsStorage[0];
         }
-
-        if (SceneManager.GetActiveScene().name == "StreetScene") //Tutorial de los Watchers 
-        {
-            currentTutorial.GetComponent<Image>().sprite = tutorialsStorage[1];
-        }
-
-        if (SceneManager.GetActiveScene().name == "HospitalScene")  //Tutorial de las sombras
-        {
-            currentTutorial.GetComponent<Image>().sprite = tutorialsStorage[2];
-        }
     }
     
 }
