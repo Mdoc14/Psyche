@@ -28,8 +28,8 @@ public class WatcherController : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
         instantiator=GetComponent<LocustInstantiator>();
-        instantiator.SpawnLocusts();
-        instantiator.ChangeLocustsTarget(center);
+        instantiator.SpawnLocusts(); //Llama al LocustInstantiator para instanciar todos los "locust"
+        instantiator.ChangeLocustsTarget(center); //Llama al LocustInstantiator para cambiar el objetivo de todos los "locust"
         headInitPos=head.localPosition;
         target1 = transform.Find("Target1");
         target2 = transform.Find("Target2");
@@ -37,7 +37,7 @@ public class WatcherController : MonoBehaviour
     }
     private void Update()
     {
-        if ((player.position - head.position).magnitude <= headLight.range && !Physics.Linecast(headLight.transform.position, player.position + Vector3.up * 0.25f, 1 << 0)&& !player.GetComponent<PlayerController>().dead) 
+        if ((player.position - head.position).magnitude <= headLight.range && !Physics.Linecast(headLight.transform.position, player.position + Vector3.up * 0.25f, 1 << 0)&& !player.GetComponent<PlayerController>().dead) //Comprobación de si el jugador está en el area de visión
         {
             seeing = true;
             if (t < detectionTime)
@@ -65,11 +65,11 @@ public class WatcherController : MonoBehaviour
             {
                 i++;
                 t2 = 0;
-                instantiator.ChangeOneLocustsTarget(player, i);
-                if (t3 > timeUntilLethal)
+                instantiator.ChangeOneLocustsTarget(player, i); // Si ha pillado al jugador, lo pone a él como objetivo de los "locust"
+                if (t3 > timeUntilLethal) // Tras un pequeño tiempo, pone a todos los "locust" a lethal para que puedan matar al jugador
                 {
                     instantiator.ChangeLocustsLethal(true);
-                    Invoke("ChangeBack", 2f);
+                    Invoke("ChangeBack", 2f); // Llama a ChangeBack() tras dos segundos para que los "locust vuelvan" a su sitio y con el objetivo incial
                     t2 = 0;
                     t3 = 0;
                     t = 0;
@@ -79,7 +79,7 @@ public class WatcherController : MonoBehaviour
         }
         if (seeing || catched)
         {
-            head.localPosition=headInitPos+new Vector3(Random.Range(-0.025f, 0.025f), Random.Range(-0.025f, 0.025f), Random.Range(-0.025f, 0.025f));
+            head.localPosition=headInitPos+new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f));
         }
         else
         {
@@ -95,7 +95,7 @@ public class WatcherController : MonoBehaviour
         }
     }
 
-    private void ChangeBack()
+    private void ChangeBack() //Resetea todos los parámetros, temporizadores y los "locust"
     {
         t2 = 0;
         t3 = 0;

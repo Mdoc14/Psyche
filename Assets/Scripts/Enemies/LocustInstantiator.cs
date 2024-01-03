@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class LocustInstantiator : MonoBehaviour
 {
-    private List<GameObject> locustList=new List<GameObject>();
-    public LocustParameters locustParams;
-    public GameObject locustObject;
-    public int locustNumber;
-    public Transform initialTarget;
+    // Esta clase contiene funciónes para instanciar "locust" y realizar operaciones a todos ellos como grupo
+    private List<GameObject> locustList=new List<GameObject>(); // lista de "locust" instanciados
+    public LocustParameters locustParams; //El ScriptableObject que se le da a todos los "locust" instanciados
+    public GameObject locustObject; //El propio GameObject "locust"
+    public int locustNumber; //Numero de "locust" a instanciar
+    public Transform initialTarget;//Objetivo inicial que se les da a todos los "locust"
     private Transform newTarget;
     // Start is called before the first frame update
-    public struct DataEnum
-    {
-        public Transform newTarget;
-        public float time;
-    }
     public void SpawnLocusts()
     {
         for(int i = 0; i < locustNumber; i++)
@@ -23,15 +19,15 @@ public class LocustInstantiator : MonoBehaviour
             float a = Random.Range(-locustParams.Unaccuracy, locustParams.Unaccuracy);
             float b = Random.Range(-locustParams.Unaccuracy, locustParams.Unaccuracy);
             float c = Random.Range(-locustParams.Unaccuracy, locustParams.Unaccuracy);
-            GameObject locust= Instantiate(locustObject,transform.position+new Vector3(a,b,c),new Quaternion(0,0,0,0));
-            locustList.Add(locust);
-            locust.GetComponent<locustController>().locustParams = locustParams;
+            GameObject locust= Instantiate(locustObject,transform.position+new Vector3(a,b,c),new Quaternion(0,0,0,0)); //Se instancian los "locust" en posiciones ligeramente diferentes alrededor del objetivo
+            locustList.Add(locust); //Se añaden a la lista
+            locust.GetComponent<locustController>().locustParams = locustParams; //Se les da el ScriptableObject
         }
-        ChangeLocustsTarget(initialTarget);
+        ChangeLocustsTarget(initialTarget); //Se establecen su objetivo inicial
 
     }
 
-    public void ChangeLocustsTarget(Transform target)
+    public void ChangeLocustsTarget(Transform target) //Establece el objetivo de TODOS los "locust" de la lista
     {
         newTarget = target;
         foreach (GameObject locust in locustList)
@@ -43,7 +39,7 @@ public class LocustInstantiator : MonoBehaviour
         }
     }
 
-    public void ChangeOneLocustsTarget(Transform target,int locustNumber)
+    public void ChangeOneLocustsTarget(Transform target,int locustNumber) //Establece el objetivo de un "locust" específico de la lista
     {
 
         if (locustNumber < locustList.Count)
@@ -57,18 +53,12 @@ public class LocustInstantiator : MonoBehaviour
         }
     }
 
-    public void ChangeLocustsLethal(bool set)
+    public void ChangeLocustsLethal(bool set) //LLama a setLethal() de l ScriptableObject
     {
-        foreach (GameObject locust in locustList)
-        {
-            if (locust != null)
-            {
-                locust.GetComponent<locustController>().locustParams.setLethal(set);
-            }
-        }
+        locustParams.setLethal(set);
     }
 
-    public void DestroyLocust(float timeBetweenDestroy)
+    public void DestroyLocust(float timeBetweenDestroy) //Destrulle todos los "locust" y los quita de la lista, se le puede pasar un tiempo entre cada destrucción
     {
         float d = 0;
         while (locustList.Count > 0)
@@ -82,12 +72,12 @@ public class LocustInstantiator : MonoBehaviour
         }
     }
 
-    public int GetLenght()
+    public int GetLenght() //Devuelve el número de "locust" de la lista
     {
         return locustList.Count;
     }
 
-    public void ResetLocustPos()
+    public void ResetLocustPos() //Devuelve todos los "locust" a su area de posiciones inicial
     {
         foreach (GameObject locust in locustList)
         {
