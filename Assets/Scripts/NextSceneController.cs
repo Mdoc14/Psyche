@@ -12,9 +12,11 @@ public class NextSceneController : MonoBehaviour
 
     public void Update()
     {
-        if (interactuable)
+        //Comprobamos si el cambio de escena es por intracción del jugador o no
+        if (interactuable && finalObject != null)
         {
-            if (finalObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("SimpleDoorOpen"))
+            //Comprobamos que se ha activado el objeto final de la escena
+            if (finalObject.GetComponent<IInteractable>().isActivated())
             {
                 Debug.Log("Activado");
                 nextScene();
@@ -27,12 +29,14 @@ public class NextSceneController : MonoBehaviour
         {
             changeFadeAnimator.SetTrigger("BlackOut");
         }
-        Invoke("LoadNextScene", 2f);
+        Invoke("LoadNextScene", 2f);//Se llama a LoadNextScene() a los 2 segundos
     }
 
     private void LoadNextScene()
     {
         changeFadeAnimator.ResetTrigger("BlackOut");
+        
+        //En funcion de la escena actual, cambia a una u otra
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             SceneManager.LoadScene("StreetScene");
@@ -40,6 +44,10 @@ public class NextSceneController : MonoBehaviour
         else if (SceneManager.GetActiveScene().buildIndex == 3) 
         {
             SceneManager.LoadScene("HospitalScene");
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            SceneManager.LoadScene("FinalScene");
         }
     }
 

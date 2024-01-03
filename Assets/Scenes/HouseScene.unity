@@ -1061,6 +1061,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010048528, y: 0.01004853, z: 0.009501822}
   m_Center: {x: 0.00019524242, y: 0.0001952596, z: -0.0018658048}
+--- !u!1 &329203371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5072462786088695249, guid: e6d756db9658e214e9639a1de6c5d3bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1656985939}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &332110601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2655786576594462803, guid: fac7fb8a104681041a195ae86c2a33cd,
@@ -4413,7 +4419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeFadeAnimator: {fileID: 792724772}
-  finalObject: {fileID: 2033311717}
+  finalObject: {fileID: 329203371}
   interactuable: 1
 --- !u!4 &1225657768
 Transform:
@@ -9591,12 +9597,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025820285}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2033311717 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 639293511808029767, guid: e6d756db9658e214e9639a1de6c5d3bf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1656985939}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2033545741 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -208656662366223148, guid: fac7fb8a104681041a195ae86c2a33cd,

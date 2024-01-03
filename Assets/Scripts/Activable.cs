@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Activable : MonoBehaviour
+public class Activable : MonoBehaviour, IInteractable
 {
     private PlayerController playerController;
     public bool onlyOnce;
@@ -12,6 +12,7 @@ public class Activable : MonoBehaviour
     public GameObject indicator; //Indicador InGame de que se puede interactuar
     public GameObject conditionIndicator; //Indicador InGame de lo que se necesita para poder interactuar
     public bool onRange; //Si el jugador esta en rango para interactuar
+    public bool activated;
     private void Start()
     {
         indicator.SetActive(false);
@@ -41,6 +42,7 @@ public class Activable : MonoBehaviour
                 if (affectedObject.GetComponent<Animator>() != null)
                 {
                     affectedObject.GetComponent<Animator>().SetTrigger("Activate");
+                    activated = true;
                     if (onlyOnce)
                     {
                         indicator.SetActive(false);
@@ -95,5 +97,10 @@ public class Activable : MonoBehaviour
                 conditionIndicator.SetActive(false);
             }
         }
+    }
+
+    public bool isActivated()
+    {
+        return activated;
     }
 }
