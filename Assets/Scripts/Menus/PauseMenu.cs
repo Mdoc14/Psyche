@@ -22,6 +22,12 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+        //Forma temporal de mostrar el tutorial
+        if (Input.GetKeyDown(KeyCode.H) && !GameIsPaused)
+        {
+            GetComponent<TutorialsManager>().showTutorial(true);
+        }
     }
 
     public void Resume()
