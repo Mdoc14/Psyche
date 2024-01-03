@@ -52,6 +52,7 @@ public class Activable : MonoBehaviour, IInteractable
                 else
                 {
                     affectedObject.SendMessage("Activate");
+                    activated = true;
                     if (onlyOnce)
                     {
                         indicator.SetActive(false);
