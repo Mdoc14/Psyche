@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColmplexWallDissapear : MonoBehaviour
+public class ComplexWallDissapear : MonoBehaviour
 {
     //Para que objetos de las paredes también se oculten sin tener que modificar la interfaz
     //Utilizar solo si se va a ocultar un objeto interactuable o complejo

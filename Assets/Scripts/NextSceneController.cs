@@ -49,6 +49,10 @@ public class NextSceneController : MonoBehaviour
         {
             SceneManager.LoadScene("FinalScene");
         }
+        else if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            SceneManager.LoadScene("End");
+        }
     }
 
     public void OnTriggerEnter(Collider other)
