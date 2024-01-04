@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5667337738162506955}
   - component: {fileID: 932328603817741074}
   - component: {fileID: 8962668332652455605}
+  - component: {fileID: -186133559283432349}
   m_Layer: 0
   m_Name: LuzHospital
-  m_TagString: Untagged
+  m_TagString: HospitalLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -35.051}
 --- !u!108 &932328603817741074
 Light:
@@ -118,3 +119,20 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &-186133559283432349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5171137560479515904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81ec09a8373fae4aa544dd868929041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightOffTimerLimit: 0.5
+  lightIntervals: 0.1
+  minInterval: 7
+  maxInterval: 15
+  light: {fileID: 932328603817741074}

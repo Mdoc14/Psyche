@@ -18,6 +18,8 @@ TagManager:
   - LanternPos
   - Jardin
   - SalonJardin
+  - HospitalLight
+  - OtherLight
   layers:
   - Default
   - TransparentFX
