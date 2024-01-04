@@ -24,7 +24,7 @@ public class AudioController : MonoBehaviour
             }
             else if (SceneManager.GetActiveScene().buildIndex == 6) 
             { 
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("CreditsScene");
             }
         }
     }

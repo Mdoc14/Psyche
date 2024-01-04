@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenuBehaviour : MonoBehaviour
 {
     public Animator changeFadeAnimator;
+
+    //Botón Jugar
     public void Play() 
     {
         if (changeFadeAnimator != null)
@@ -14,7 +16,13 @@ public class MainMenuBehaviour : MonoBehaviour
         }
         Invoke("PlayChangeScene", 2f);
     }
+    private void PlayChangeScene()
+    {
+        changeFadeAnimator.ResetTrigger("BlackOut");
+        SceneManager.LoadScene("Intro");
+    }
 
+    //Botón Salir
     public void Quit() 
     {
         Debug.Log("Saliendo del juego ...");
@@ -22,14 +30,23 @@ public class MainMenuBehaviour : MonoBehaviour
         Invoke("QuitAction", 2f);
     }
 
-    private void PlayChangeScene()
-    {
-        changeFadeAnimator.ResetTrigger("BlackOut");
-        SceneManager.LoadScene("Intro");
-    }
-
     public void QuitAction()
     {
         Application.Quit();
     }
+
+    //Botón Creditos
+    public void Credits()
+    {
+        Debug.Log("Mostrando creditos");
+        changeFadeAnimator.SetTrigger("BlackOut");
+        Invoke("PlayCreditsScene", 2f);
+    }
+
+    private void PlayCreditsScene()
+    {
+        changeFadeAnimator.ResetTrigger("BlackOut");
+        SceneManager.LoadScene("CreditsScene");
+    }
+
 }
