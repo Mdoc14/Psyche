@@ -14,7 +14,7 @@ public class Activable : MonoBehaviour, IInteractable
     public GameObject indicator; //Indicador InGame de que se puede interactuar
     public GameObject conditionIndicator; //Indicador InGame de lo que se necesita para poder interactuar
     public bool onRange; //Si el jugador esta en rango para interactuar
-    public bool activated;
+    public bool activated; // indica si el interactuable ha sido activado
     private void Start()
     {
         indicator.SetActive(false);
@@ -48,6 +48,7 @@ public class Activable : MonoBehaviour, IInteractable
                         affectedObject.GetComponent<Animator>().SetTrigger("Activate");
                     }
                     activated = true;
+                    
                     if (onlyOnce)
                     {
                         indicator.SetActive(false);
@@ -124,6 +125,9 @@ public class Activable : MonoBehaviour, IInteractable
 
     public bool isActivated()
     {
-        return activated;
+        Debug.Log("Esta activo? " + activated);
+        bool aux = activated;
+        activated = false;
+        return aux;
     }
 }
