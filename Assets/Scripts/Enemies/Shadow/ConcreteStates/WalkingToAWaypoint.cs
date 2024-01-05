@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class WalkingToAWaypoint : AShadowState
 {
-    float lastTimeSearching = 0.0f;
-
     public WalkingToAWaypoint(IShadow shadow) : base(shadow)
     {
     }
@@ -33,11 +31,5 @@ public class WalkingToAWaypoint : AShadowState
 
     public override void Update()
     {
-        lastTimeSearching += Time.deltaTime;
-
-        if (lastTimeSearching >= shadow.GetBasicMovementSpeed())
-        {
-            shadow.SetState(new LookingForPlayer(shadow));
-        }
     }
 }

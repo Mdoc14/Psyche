@@ -15,7 +15,6 @@ public class AttackingPlayer : AShadowState
 
     public override void Enter()
     {
-        shadow.GetEnemyGameObject().transform.Find("Character2").GetComponent<Collider>().enabled = false;
     }
 
     public override void Exit()
@@ -24,14 +23,14 @@ public class AttackingPlayer : AShadowState
 
     public override void FixedUpdate()
     {
-        if (shadow.GetDistanceTo(shadow.GetPlayerAtSight().transform) > 0.5f)
+        if (shadow.GetDistanceTo(shadow.GetPlayerAtSight().transform) > 1f)
         {
             shadow.MoveTo(shadow.GetPlayerAtSight().transform, shadow.GetAttackingSpeed());
         }
         else
         {
-            shadow.GetPlayerAtSight().GetComponent<PlayerController>().Die();
             playerIsDead = true;
+            shadow.GetPlayerAtSight().GetComponent<PlayerController>().Die();
         }
     }
 
@@ -42,7 +41,7 @@ public class AttackingPlayer : AShadowState
             timeSincePlayerDied += Time.deltaTime;
         }
 
-        if(timeSincePlayerDied >= 5)
+        if(timeSincePlayerDied >= 3.5)
         {
             shadow.RestoreShadow();
         }

@@ -17,7 +17,6 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
     private IState _currentState;
 
     //Atributos para controlar al enemigo
-    private Transform _visionArea;
     private Vector3 _initialPosition;
     private Transform _currentWaypoint; //Referencia a la transformada del waypoint actual
     private GameObject _playerAtSight = null; //Referencia al jugador si está a la vista del enemigo
@@ -41,7 +40,6 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
 
     void Awake()
     {
-        _visionArea = transform.Find("VisionArea");
         _initialPosition = transform.position;
         _currentWaypoint = waypoints[0];
         SetState(new LookingForAWaypoint(this));
@@ -88,7 +86,7 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
     {
         Vector3 direction = destination.position - transform.position;
         direction.y = 0;
-        float angle = Vector3.Angle(transform.forward, direction.normalized);
+        float angle = Vector3.SignedAngle(transform.forward, direction.normalized, transform.up);
 
         return angle;
     }
@@ -131,14 +129,19 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
         {
             RaycastHit hit;
 
-            Vector3 rayTarget = player.transform.position;
-            rayTarget.y = _visionArea.position.y;
+            Vector3 rayOrigin = transform.position;
+            rayOrigin.y = transform.position.y + 1.4f;
 
-            if (Physics.Linecast(_visionArea.position, rayTarget, out hit))
+            Vector3 rayTarget = player.transform.position;
+            rayTarget.y = transform.position.y + 1.4f;
+
+            int layerMask = ~(1 << LayerMask.NameToLayer("Only Raycast")); //El linecast ignorará esta capa
+
+            if (Physics.Linecast(rayOrigin, rayTarget, out hit, layerMask))
             {
-                Debug.Log(hit.collider.gameObject.name);
                 if (hit.collider.CompareTag("Player"))
                 {
+                    SetState(new AttackingPlayer(this));
                     return hit.collider.gameObject;
                 }
             }
@@ -164,7 +167,7 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && _playerAtSight == null)
         {
             _playerAtSight = CheckIfPlayerIsAtSight(other.gameObject);
         }
@@ -172,7 +175,7 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
 
     public void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && _playerAtSight == null)
         {
             _playerAtSight = CheckIfPlayerIsAtSight(other.gameObject);
         }
