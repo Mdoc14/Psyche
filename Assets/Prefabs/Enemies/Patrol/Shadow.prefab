@@ -47,11 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e5597ed032f3844b03faecfef010fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
-  attackingSpeed: 0
-  rotationSpeed: 0
-  viewingAngle: 0
+  movementSpeed: 0.7
+  attackingSpeed: 8
+  rotationSpeed: 6
+  viewingAngle: 60
   waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!135 &8257178754939673576
@@ -240,11 +242,11 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 500
   m_Range: 7
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 30
+  m_SpotAngle: 60
+  m_InnerSpotAngle: 60
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

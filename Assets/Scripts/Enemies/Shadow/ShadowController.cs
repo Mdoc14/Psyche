@@ -7,10 +7,10 @@ using UnityEngine.UIElements;
 public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón State
 {
     //ATRIBUTOS CONFIGURABLES DEL ENEMIGO
-    public int movementSpeed; //Velocidad de movimiento del enemigo cuando patrulla
-    public int attackingSpeed; //Velocidad de movimiento del enemigo cuando se dirige al jugador
-    public int rotationSpeed; //Velocidad de rotación del enemigo
-    public int viewingAngle; //Angulo de visión
+    public float movementSpeed; //Velocidad de movimiento del enemigo cuando patrulla
+    public float attackingSpeed; //Velocidad de movimiento del enemigo cuando se dirige al jugador
+    public float rotationSpeed; //Velocidad de rotación del enemigo
+    public float viewingAngle; //Angulo de visión
     public Transform[] waypoints; //Array de waypoints que recorrerá el enemigo
 
     //Referencia al estado actual
@@ -91,17 +91,17 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
         return angle;
     }
 
-    public int GetBasicMovementSpeed()
+    public float GetBasicMovementSpeed()
     {
         return movementSpeed;
     }
 
-    public int GetAttackingSpeed()
+    public float GetAttackingSpeed()
     {
         return attackingSpeed;
     }
 
-    public int GetRotationSpeed()
+    public float GetRotationSpeed()
     {
         return rotationSpeed;
     }

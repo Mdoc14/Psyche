@@ -15,9 +15,9 @@ public interface IShadow
     public GameObject GetPlayerAtSight();
     public float GetDistanceTo(Transform destination);
     public float GetAngleTo(Transform destination);
-    public int GetBasicMovementSpeed();
-    public int GetAttackingSpeed();
-    public int GetRotationSpeed();
+    public float GetBasicMovementSpeed();
+    public float GetAttackingSpeed();
+    public float GetRotationSpeed();
     public void MoveTo(Transform destination, float movementSpeed);
     public void RotateTo(Transform destination);
 

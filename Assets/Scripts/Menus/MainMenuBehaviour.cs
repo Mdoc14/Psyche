@@ -22,6 +22,23 @@ public class MainMenuBehaviour : MonoBehaviour
         SceneManager.LoadScene("Intro");
     }
 
+    //Botón Continuar
+    public void Continue()
+    {
+        if (changeFadeAnimator != null)
+        {
+            changeFadeAnimator.SetTrigger("BlackOut");
+        }
+        Invoke("ContinueChangeScene", 2f);
+    }
+
+    private void ContinueChangeScene()
+    {
+        GameManager.Instance.loadGame();
+        changeFadeAnimator.ResetTrigger("BlackOut");
+        SceneManager.LoadScene(GameManager.Instance.sceneSaved);
+    }
+
     //Botón Salir
     public void Quit() 
     {
