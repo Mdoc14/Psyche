@@ -1,6 +1,7 @@
 using Interfaces;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
@@ -63,21 +64,34 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
     //Recorre la lista y pone en false el atributo "enabled" del MeshRenderer. Ocultando los GameObject/Paredes que no queremos que se vean 
     public void visibilityOff(List<GameObject> lista)
     {
+        MeshRenderer meshRenderer;
+
         if (lista != null)
         {
             foreach (GameObject obj in lista)
             {
-                if(obj!=null)
-                obj.GetComponent<MeshRenderer>().enabled = false;
-                if (obj.CompareTag("Walkable") || obj.CompareTag("LanternPos"))//Para el funcionamiento de la linterna
+                if (obj != null)    //Si el objeto al que estamos accediendo es distinto de nulo (las llaves cuando se recogen valen null)
                 {
-                    if (obj.GetComponent<BoxCollider>() != null)
+                    meshRenderer = obj.GetComponent<MeshRenderer>();
+
+                    if (meshRenderer != null) //Si el GO tiene meshRenderer
                     {
-                        obj.GetComponent<BoxCollider>().enabled = false;
+                        meshRenderer.enabled = false;
+                        if (obj.CompareTag("Walkable") || obj.CompareTag("LanternPos"))//Para el funcionamiento de la linterna
+                        {
+                            if (obj.GetComponent<BoxCollider>() != null)
+                            {
+                                meshRenderer.enabled = false;
+                            }
+                            else if (obj.GetComponent<MeshCollider>() != null)
+                            {
+                                meshRenderer.enabled = false;
+                            }
+                        }
                     }
-                    else if (obj.GetComponent<MeshCollider>() != null)
+                    else //Si no tiene meshRenderer, es porque se trata de una de las puertas
                     {
-                        obj.GetComponent<MeshCollider>().enabled = false;
+                        obj.SetActive(false);
                     }
                 }
             }
@@ -88,18 +102,32 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
     //Recorre la lista y pone en true el atributo "enabled" del MeshRenderer. Mostrando los GameObject/Paredes que queremos que se vean
     public void visibilityOn(List<GameObject> lista)
     {
+        MeshRenderer meshRenderer;
+
         foreach (GameObject obj in lista)
         {
-            obj.GetComponent<MeshRenderer>().enabled = true;
-            if (obj.CompareTag("Walkable") || obj.CompareTag("LanternPos"))//Para el funcionamiento de la linterna
-            {
-                if (obj.GetComponent<BoxCollider>() != null)
+            if (obj != null) //Si el objeto al que estamos accediendo es distinto de nulo (las llaves cuando se recogen valen null)
+            { 
+                meshRenderer = obj.GetComponent<MeshRenderer>();
+                if (meshRenderer != null)   //Si el GO tiene meshRenderer
                 {
-                    obj.GetComponent<BoxCollider>().enabled = true;
+                    meshRenderer.enabled = true;
+
+                    if (obj.CompareTag("Walkable") || obj.CompareTag("LanternPos"))//Para el funcionamiento de la linterna
+                    {
+                        if (obj.GetComponent<BoxCollider>() != null)
+                        {
+                            meshRenderer.enabled = true;
+                        }
+                        else if (obj.GetComponent<MeshCollider>() != null)
+                        {
+                            meshRenderer.enabled = true;
+                        }
+                    }
                 }
-                else if(obj.GetComponent<MeshCollider>() != null)
+                else //Si no tiene meshRenderer, es porque se trata de una de las puertas
                 {
-                    obj.GetComponent<MeshCollider>().enabled = true;
+                    obj.SetActive(true);
                 }
             }
         }

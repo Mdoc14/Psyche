@@ -11,24 +11,31 @@ public class TutorialsManager : MonoBehaviour
     public Image currentTutorial;            //Referencia al GO donde se muestra la imagen
     public GameObject tutorialLayer;         //GO que almacena la referencia al menu de los tutoriales
 
-    public void showTutorial(bool value) //Metodo para mostrar/ocultar la capa del tutorial en el canvas
+    public void showTutorialPopUp() //Metodo que invoca a un metodo que invoka a firstTimeTutorial
+    {
+        Invoke("firstTimeTutorial", 1f);    //Realiza la llamada 1 segundo despues de leer esta linea
+    }
+
+    private void firstTimeTutorial()  //Metodo que llama a showTutorial pasandole true (existe ya que con Invoke no se pueden pasar parametros a la funcion invocada)
+    {
+        showTutorial(true);
+    }
+    public void showTutorial(bool value) //Metodo para mostrar/ocultar la capa del tutorial
     {
         tutorialLayer.SetActive(value);     
         setImage();                         //Llamada que muestra la imagen de tutorial correspondiente al escenario
         Time.timeScale = 0f;                //Pausamos el tiempo
     }
 
+
     public void continueButton(){       //Metodo que gestiona el evento de pulsar sobre el boton continuar
         showTutorial(false);
         Time.timeScale = 1f;
     }
 
-    public void setImage()              //Metodo que muestra la imagen correspondiente segun el mapa
+    public void setImage()              //Metodo que muestra la imagen correspondiente 
     {
-        if (SceneManager.GetActiveScene().name == "HouseScene") //Tutorial de controles
-        {
             currentTutorial.GetComponent<Image>().sprite = tutorialsStorage[0];
-        }
     }
     
 }

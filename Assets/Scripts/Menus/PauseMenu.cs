@@ -9,7 +9,13 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        if (SceneManager.GetActiveScene().name == "HouseScene") //Mostramos el pop up del tutorial al empezar el juego en el primer escenario
+        {
+            GetComponent<TutorialsManager>().showTutorialPopUp();
+        }
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -21,12 +27,6 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
-        }
-
-        //Forma temporal de mostrar el tutorial
-        if (Input.GetKeyDown(KeyCode.H) && !GameIsPaused)
-        {
-            GetComponent<TutorialsManager>().showTutorial(true);
         }
     }
 
