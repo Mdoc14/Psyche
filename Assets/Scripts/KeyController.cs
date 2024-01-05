@@ -11,7 +11,14 @@ public class KeyController : MonoBehaviour
     }
     public void Activate()
     {
-        playerController.GetKey();
-        Destroy(gameObject);
+        playerController.GetKey(this.gameObject);
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(false);
+    }
+
+    public void Reapear()
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(1).gameObject.SetActive(true);
     }
 }

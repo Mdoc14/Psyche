@@ -108,7 +108,7 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
 
     public void MoveTo(Transform destination, float speed)
     {
-        Vector3 direction = destination.position - transform.position;
+        Vector3 direction = (destination.position - transform.position).normalized;
 
         if (GetAngleTo(destination) != 0)
         {

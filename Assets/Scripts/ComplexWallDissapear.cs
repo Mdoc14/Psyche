@@ -16,19 +16,26 @@ public class ComplexWallDissapear : MonoBehaviour
             {
                 foreach (GameObject mr in objects)
                 {
-                    if (mr.activeSelf == false)
+                    if (mr != null)
                     {
-                        mr.SetActive(true);
+                        if (mr.activeSelf == false)
+                        {
+                            mr.SetActive(true);
+                        }
                     }
+
                 }
             }
             else if (transform.parent.GetComponent<MeshRenderer>().enabled == false)
             {
                 foreach (GameObject mr in objects)
                 {
-                    if (mr.activeSelf == true)
+                    if (mr != null)
                     {
-                        mr.SetActive(false);
+                        if (mr.activeSelf == true)
+                        {
+                            mr.SetActive(false);
+                        }
                     }
                 }
             }

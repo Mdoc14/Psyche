@@ -33,7 +33,7 @@ Transform:
   - {fileID: 2465031995068947380}
   - {fileID: 9153141277911315702}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3987946203618289175
 MonoBehaviour:
@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e5597ed032f3844b03faecfef010fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.7
-  attackingSpeed: 8
-  rotationSpeed: 6
+  movementSpeed: 8
+  attackingSpeed: 15
+  rotationSpeed: 4
   viewingAngle: 60
   waypoints:
   - {fileID: 0}
@@ -241,7 +241,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 500
-  m_Range: 7
+  m_Range: 6
   m_SpotAngle: 60
   m_InnerSpotAngle: 60
   m_CookieSize: 10

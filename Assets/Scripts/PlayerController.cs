@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject[] keyIndicators;
+    public List<GameObject> KeyReferences;
     public int keyNumber;
     private Vector3 respawnPoint; 
     private Rigidbody rb;
@@ -133,7 +134,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Walking", false);
             animator.SetBool("Dead", true);
             dead = true;
-            keyNumber = 0;
+            loseKeys(keyNumber);
             Invoke("Respawn", 3.5f);
         }
     }
@@ -146,6 +147,18 @@ public class PlayerController : MonoBehaviour
         modelTransform.localRotation = Quaternion.Euler(0f, 180f, 0f);  //Reiniciamos su rotacion
         transform.position = respawnPoint;
         cam.CamResetDeath();
+        if (KeyReferences!=null)
+        {
+            foreach(GameObject key in KeyReferences)
+            {
+                key.SendMessage("Reapear");
+            }
+            for (int i = 0; i < KeyReferences.Count; i++)
+            {
+                KeyReferences.RemoveAt(0);
+            }
+        }
+
         Invoke("SetAlive", 0.5f);
 
     }
@@ -160,9 +173,10 @@ public class PlayerController : MonoBehaviour
         respawnPoint = pos;
     }
 
-    public void GetKey()
+    public void GetKey(GameObject key)
     {
         keyNumber++;
+        KeyReferences.Add(key);
         if (keyNumber >= 1)
         {
             keyIndicators[0].SetActive(true);

@@ -6,8 +6,10 @@ public class Activable : MonoBehaviour, IInteractable
 {
     private PlayerController playerController;
     public bool onlyOnce;
+    public bool destroyParent = false;
     public int neededKeys;
     private float t;
+    public bool sendmessage = true;
     public GameObject affectedObject; //El objeto al que le afectara esta interacción
     public GameObject indicator; //Indicador InGame de que se puede interactuar
     public GameObject conditionIndicator; //Indicador InGame de lo que se necesita para poder interactuar
@@ -41,22 +43,42 @@ public class Activable : MonoBehaviour, IInteractable
                 //Informar al objeto afectado
                 if (affectedObject.GetComponent<Animator>() != null)
                 {
-                    affectedObject.GetComponent<Animator>().SetTrigger("Activate");
+                    if (sendmessage)
+                    {
+                        affectedObject.GetComponent<Animator>().SetTrigger("Activate");
+                    }
                     activated = true;
                     if (onlyOnce)
                     {
                         indicator.SetActive(false);
-                        Destroy(gameObject);
+                        if (destroyParent)
+                        {
+                            Destroy(transform.parent.gameObject);
+                        }
+                        else
+                        {
+                            Destroy(gameObject);
+                        }
                     }
                 }
                 else
                 {
-                    affectedObject.SendMessage("Activate");
+                    if (sendmessage)
+                    {
+                        affectedObject.SendMessage("Activate");
+                    }
                     activated = true;
                     if (onlyOnce)
                     {
                         indicator.SetActive(false);
-                        Destroy(gameObject);
+                        if (destroyParent)
+                        {
+                            Destroy(transform.parent.gameObject);
+                        }
+                        else
+                        {
+                            Destroy(gameObject);
+                        }
                     }
                 }
                 if (!onlyOnce)

@@ -281,7 +281,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 102.7
+  m_Intensity: 75
   m_Range: 8.78
   m_SpotAngle: 75.634155
   m_InnerSpotAngle: 37.774033
@@ -441,12 +441,12 @@ PrefabInstance:
     - target: {fileID: 135552493546473665, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135552493546473665, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.465055
       objectReference: {fileID: 0}
     - target: {fileID: 135552493546473665, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
         type: 3}
@@ -456,7 +456,7 @@ PrefabInstance:
     - target: {fileID: 135552493546473665, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
         type: 3}
       propertyPath: m_Intensity
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1001556673087084468, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
         type: 3}
@@ -525,6 +525,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444933661168788231, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
         type: 3}
+      propertyPath: sendmessage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2444933661168788231, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
+        type: 3}
       propertyPath: affectedObject
       value: 
       objectReference: {fileID: 1334295022}
@@ -551,12 +556,12 @@ PrefabInstance:
     - target: {fileID: 8437079009112139378, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8437079009112139378, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.47127295
       objectReference: {fileID: 0}
     - target: {fileID: 8437079009112139378, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
         type: 3}
@@ -566,7 +571,7 @@ PrefabInstance:
     - target: {fileID: 8437079009112139378, guid: c2c0c5828fe22d24a9266e78cecaa7d2,
         type: 3}
       propertyPath: m_Intensity
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3377937688107353395, guid: c2c0c5828fe22d24a9266e78cecaa7d2, type: 3}
