@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WatcherController : MonoBehaviour
 {
+    private bool playedCatchSound=false;
+    public AudioSource sound;
+    public AudioSource sound2;
     private bool catched;
     private int i;
     public Light headLight;
@@ -34,6 +37,8 @@ public class WatcherController : MonoBehaviour
         target1 = transform.Find("Target1");
         target2 = transform.Find("Target2");
         actualTarget = target1;
+        sound = GetComponent<AudioSource>();
+        sound.volume = 0;
     }
     private void Update()
     {
@@ -43,6 +48,10 @@ public class WatcherController : MonoBehaviour
             if (t < detectionTime)
             {
                 t += Time.deltaTime;
+                if (sound.volume < 0.5)
+                {
+                    sound.volume = Mathf.Lerp(0f,0.5f,(t/detectionTime)+0.25f);
+                }
             }
             else
             {
@@ -52,10 +61,15 @@ public class WatcherController : MonoBehaviour
         else
         {
             seeing = false;
+            if (sound.volume > 0)
+            {
+                sound.volume -= Time.deltaTime / 3;
+            }
         }
         if (!seeing && t > 0)
         {
             t-=Time.deltaTime/3;
+
         }
         if (catched)
         {
@@ -66,6 +80,11 @@ public class WatcherController : MonoBehaviour
                 i++;
                 t2 = 0;
                 instantiator.ChangeOneLocustsTarget(player, i); // Si ha pillado al jugador, lo pone a él como objetivo de los "locust"
+                if (!playedCatchSound)
+                {
+                    playedCatchSound = true;
+                    sound2.Play();
+                }
                 if (t3 > timeUntilLethal) // Tras un pequeño tiempo, pone a todos los "locust" a lethal para que puedan matar al jugador
                 {
                     instantiator.ChangeLocustsLethal(true);
@@ -105,5 +124,6 @@ public class WatcherController : MonoBehaviour
         instantiator.ChangeLocustsLethal(false);
         instantiator.ResetLocustPos();
         catched = false;
+        playedCatchSound = false;
     }
 }

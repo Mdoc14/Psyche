@@ -16,7 +16,6 @@ public class locustController : MonoBehaviour
         if (locustParams != null)
         {
             transform.localScale = Vector3.one * locustParams.scale; //Se ajusta su escala a la que tiene definida el ScriptableObject
-            locustParams.setCameraPos(Camera.main.transform); //Se llama a la función común setCameraPos del ScriptableObject para darles a todas las instancias la referencia a la cámara
         }
     }
 

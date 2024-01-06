@@ -8,7 +8,7 @@ public class LightBehaviour : MonoBehaviour
     public float lightIntervals; // Limite en el que se cambia entre encendido y apagado de la luz
     public float minInterval; // Valor minimo de intervalo
     public float maxInterval; // Valor maximo de intervalo
-    public Light light; // Componente de la luz
+    public Light lightComponent; // Componente de la luz
 
     private float lightOnTimerLimit; // Frecuencia en segundos en el que comienza la animación de parpadeo
     private float lightOnTimer; // Timer para controlar cuando se hace la animacion 
@@ -18,7 +18,7 @@ public class LightBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        originalIntensity = light.intensity; // Se guarda la intensidad original
+        originalIntensity = lightComponent.intensity; // Se guarda la intensidad original
         lightOnTimerLimit = Random.Range(minInterval, maxInterval + 1f); // Se asigna un numero aleatorio para realizar la animacion
     }
     void Update()
@@ -30,14 +30,14 @@ public class LightBehaviour : MonoBehaviour
             if (timerInterval > lightIntervals) 
             { 
                 // Si esta encendida, se apaga
-                if(light.intensity == originalIntensity) 
+                if(lightComponent.intensity == originalIntensity) 
                 { 
-                    light.intensity = 0;
+                    lightComponent.intensity = 0;
                 }
                 // Si esta apagada, se enciende
                 else 
                 { 
-                    light.intensity = originalIntensity;
+                    lightComponent.intensity = originalIntensity;
                 }
                 // Independientemente de la accion, el timer se reinicia
                 timerInterval = 0;
@@ -50,7 +50,7 @@ public class LightBehaviour : MonoBehaviour
                 lightOnTimerLimit = Random.Range(minInterval, maxInterval + 1f);
                 lightOnTimer = 0;
                 lightOffTimer = 0;
-                light.intensity = originalIntensity;
+                lightComponent.intensity = originalIntensity;
             }
 
             timerInterval += Time.deltaTime;

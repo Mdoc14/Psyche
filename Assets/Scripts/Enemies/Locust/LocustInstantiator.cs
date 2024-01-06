@@ -23,6 +23,7 @@ public class LocustInstantiator : MonoBehaviour
             locustList.Add(locust); //Se añaden a la lista
             locust.GetComponent<locustController>().locustParams = locustParams; //Se les da el ScriptableObject
         }
+        locustParams.setCameraPos(Camera.main.transform); //Se llama a la función común setCameraPos del ScriptableObject para darles a todas las instancias la referencia a la cámara
         ChangeLocustsTarget(initialTarget); //Se establecen su objetivo inicial
 
     }
