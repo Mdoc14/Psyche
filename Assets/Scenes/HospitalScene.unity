@@ -6944,7 +6944,7 @@ MonoBehaviour:
   lightIntervals: 0.1
   minInterval: 10
   maxInterval: 20
-  light: {fileID: 379713577}
+  lightComponent: {fileID: 0}
 --- !u!114 &379713576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14025,7 +14025,7 @@ MonoBehaviour:
   lightIntervals: 0.1
   minInterval: 10
   maxInterval: 20
-  light: {fileID: 721404291}
+  lightComponent: {fileID: 0}
 --- !u!114 &721404290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14633,7 +14633,7 @@ MonoBehaviour:
   lightIntervals: 0.1
   minInterval: 10
   maxInterval: 20
-  light: {fileID: 733734870}
+  lightComponent: {fileID: 0}
 --- !u!114 &733734869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15219,7 +15219,7 @@ MonoBehaviour:
   lightIntervals: 0.1
   minInterval: 10
   maxInterval: 20
-  light: {fileID: 766924622}
+  lightComponent: {fileID: 0}
 --- !u!114 &766924621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18943,7 +18943,7 @@ MonoBehaviour:
   lightIntervals: 0.1
   minInterval: 10
   maxInterval: 20
-  light: {fileID: 930908321}
+  lightComponent: {fileID: 0}
 --- !u!114 &930908320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19672,6 +19672,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe8ecacfa9eea744d82e9cc866ab1fb6, type: 3}
+--- !u!1 &958589127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 958589129}
+  - component: {fileID: 958589128}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &958589128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958589127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: eef26e8c6d80cf04683da4565415bdde, type: 2}
+--- !u!4 &958589129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958589127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 689.9744, y: 404.41986, z: 341.63312}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969135301
 GameObject:
   m_ObjectHideFlags: 0
@@ -22484,7 +22533,7 @@ MonoBehaviour:
   lightIntervals: 0.1
   minInterval: 10
   maxInterval: 20
-  light: {fileID: 1133341254}
+  lightComponent: {fileID: 0}
 --- !u!114 &1133341253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24539,7 +24588,7 @@ MonoBehaviour:
   lightIntervals: 0.1
   minInterval: 10
   maxInterval: 20
-  light: {fileID: 1219737931}
+  lightComponent: {fileID: 0}
 --- !u!114 &1219737930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24888,7 +24937,7 @@ MonoBehaviour:
   lightIntervals: 0.1
   minInterval: 10
   maxInterval: 20
-  light: {fileID: 1243234544}
+  lightComponent: {fileID: 0}
 --- !u!114 &1243234543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25695,7 +25744,7 @@ MonoBehaviour:
   lightIntervals: 0.1
   minInterval: 10
   maxInterval: 20
-  light: {fileID: 1270208119}
+  lightComponent: {fileID: 0}
 --- !u!114 &1270208118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40942,7 +40991,7 @@ MonoBehaviour:
   lightIntervals: 0.1
   minInterval: 10
   maxInterval: 20
-  light: {fileID: 1999460937}
+  lightComponent: {fileID: 0}
 --- !u!114 &1999460936
 MonoBehaviour:
   m_ObjectHideFlags: 0
