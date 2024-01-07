@@ -50,7 +50,7 @@ public class WatcherController : MonoBehaviour
                 t += Time.deltaTime;
                 if (sound.volume < 0.5)
                 {
-                    sound.volume = Mathf.Lerp(0f,0.5f,(t/detectionTime)+0.25f);
+                    sound.volume = Mathf.Lerp(0f,0.1f,(t/detectionTime)+0.25f);
                 }
             }
             else

@@ -20,16 +20,24 @@ public class DoorSoundComponent : MonoBehaviour
     {
         if (doorInteractuable.GetComponent<IInteractable>().isActivated())
         {
-            if (isClosed)
+            if (isClosed && openDoor != null)
             {
                 openDoor?.Play();
                 isClosed = false;
             }
-            else 
+            else if(!isClosed && closeDoor != null) 
             {
                 closeDoor?.Play();
                 isClosed = true;
             }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (openDoor != null)
+        {
+            openDoor.Play();
         }
     }
 }

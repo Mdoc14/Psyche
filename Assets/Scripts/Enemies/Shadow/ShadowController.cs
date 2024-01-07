@@ -12,6 +12,7 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
     public float rotationSpeed; //Velocidad de rotación del enemigo
     public float viewingAngle; //Angulo de visión
     public Transform[] waypoints; //Array de waypoints que recorrerá el enemigo
+    public AudioSource whisperAudio;//Sonido de ataque del enemigo
 
     //Referencia al estado actual
     private IState _currentState;
@@ -142,6 +143,7 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
                 if (hit.collider.CompareTag("Player"))
                 {
                     SetState(new AttackingPlayer(this));
+                    whisperAudio.Play();
                     return hit.collider.gameObject;
                 }
             }
