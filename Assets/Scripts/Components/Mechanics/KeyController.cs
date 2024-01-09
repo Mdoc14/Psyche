@@ -7,7 +7,7 @@ public class KeyController : MonoBehaviour
     private PlayerController playerController;
     private void Start()
     {
-        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
     public void Activate()
     {
