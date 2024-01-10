@@ -38,6 +38,8 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
     public List<GameObject> piso0GameObjects = new List<GameObject>();
     public List<GameObject> gardenGameObjects = new List<GameObject>();
 
+    //Lista con algunas paredes que cuando se está dentro de la casa no se ocultan nunca, pero que al salir al jardin deben ocultarse
+    public List<GameObject> paredesEspeciales = new List<GameObject>();
     private void Awake()
     {
         //Buscamos al jugador y suscribimos esta clase a su sujeto
@@ -198,6 +200,8 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
                 updateEnviroment(salaActualSinParedes, salaActualConMuros, salonParedes, salonMuros);
                 break;
 
+                //Ha partir del case 9, son casos especiales donde no se usa updateEnviroment
+
             case 9: //Cambio de piso, piso actual: planta baja
 
                 //Ocultamos el piso donde se encontraba el jugador
@@ -243,6 +247,7 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
                 visibilityOff(piso0GameObjects);
                 visibilityOff(salaActualConMuros);
                 visibilityOn(gardenGameObjects);
+                visibilityOff(paredesEspeciales);
                 salaActualConMuros = null;
                 salaActualSinParedes = null;
                 break;
@@ -258,6 +263,7 @@ public class Observer_VisiilityControl : MonoBehaviour, IObserver<float>
 
                     visibilityOff(salaActualSinParedes);
                     visibilityOn(salaActualConMuros);
+                    visibilityOn(paredesEspeciales);
                 }
 
                 break;
