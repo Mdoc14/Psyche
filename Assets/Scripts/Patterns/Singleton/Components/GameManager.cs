@@ -8,12 +8,30 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton <GameManager>
 {
     [HideInInspector]
+    public SettingsStruct settings;
+
+    private string settingsFileName = "settings.IDV";
+    private string settingsFilePath
+    {
+        get => $"{Application.dataPath}/{settingsFileName}";
+    }
+
+    [HideInInspector]
     public int sceneSaved; // Escena guardada
 
     private string FileName = "partidaGuardada.IDV"; 
     private string FilePath
     {
         get => $"{Application.dataPath}/{FileName}";
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        if (!loadSettings())
+        {
+            settings = new SettingsStruct();
+        }
     }
 
     //Se guarda el entero de la escena en un fichero
@@ -48,5 +66,31 @@ public class GameManager : Singleton <GameManager>
         
         Debug.LogWarning($"No se ha encontrado ningun fichero en {FilePath} .");
         return 1;
+    }
+
+    public void saveSettings()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream fileStream = File.Create(settingsFilePath);
+        formatter.Serialize(fileStream, settings);
+        fileStream.Flush();
+        fileStream.Close();
+    }
+
+    public bool loadSettings()
+    {
+        if (File.Exists(settingsFilePath))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream fileStream = File.OpenRead(settingsFilePath);
+            settings = (SettingsStruct)formatter.Deserialize(fileStream);
+            fileStream.Close();
+            return true;
+        }
+        else
+        {
+            Debug.LogWarning($"No se ha encontrado ningun fichero en {settingsFilePath} .");
+            return false;
+        }
     }
 }
