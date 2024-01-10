@@ -32,14 +32,6 @@ public class DoorSoundComponent : MonoBehaviour
             }
         }
     }
-
-    private void OnDestroy()
-    {
-        if (openDoor != null)
-        {
-            openDoor.Play();
-        }
-    }
 }
 
 
