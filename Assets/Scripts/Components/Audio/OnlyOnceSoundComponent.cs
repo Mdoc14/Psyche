@@ -2,23 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyedSoundComponent : MonoBehaviour
+public class OnlyOnceSoundComponent : MonoBehaviour
 {
     private AudioSource source;
-    public GameObject playerSound;
-    public GameObject objectActive;
+    public GameObject ObjectWithAudioSource;
+    public GameObject objectInteractuable;
     private bool active;
     private bool soundPlayed;
 
     private void Awake()
     {
-        source = playerSound.GetComponent<AudioSource>();
+        source = ObjectWithAudioSource.GetComponent<AudioSource>();
         soundPlayed = true;
     }
 
     private void Update()
     {
-        active = objectActive.activeSelf;
+        active = objectInteractuable.activeSelf;
         if (!active) 
         {
             if (soundPlayed)

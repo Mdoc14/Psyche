@@ -125,13 +125,8 @@ public class Activable : MonoBehaviour
 
     public bool isActivated()
     {
-        Debug.Log("Esta activo? " + activated);
         bool aux = activated;
         activated = false;
-        if (aux) 
-        {
-            Debug.Log("Aux es: " + aux);
-        }
         return aux;
     }
 }
