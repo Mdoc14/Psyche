@@ -52,10 +52,7 @@ public class PlayerController : MonoBehaviour
 
         ////////MOVIMIENTO/////////
 
-        //transform.position = transform.position + (Vector3.forward * Time.deltaTime * speed * direction.z);
-        //transform.position = transform.position + (Vector3.right * Time.deltaTime * speed * direction.x);
-
-        //Mejor velocidad por Rigidbody, para que interactue mejor con el entorno
+        //velocidad por Rigidbody, para que interactue con el entorno
         if (canWalk && !falling)
         {
             rb.velocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
@@ -65,7 +62,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(direction.x * speed, -speed * 2, direction.z * speed);
         }
 
-        ///////ROTACI?N////////
+        ///////ROTACION////////
         if (direction.magnitude > 0 && !dead)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;

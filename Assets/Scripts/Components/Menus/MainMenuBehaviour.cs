@@ -12,13 +12,13 @@ public class MainMenuBehaviour : MonoBehaviour
     {
         if (changeFadeAnimator != null)
         {
-            changeFadeAnimator.SetTrigger("BlackOut");
+            changeFadeAnimator.SetTrigger("BlackOut"); // Se hace animación de fundido a negro
         }
-        Invoke("PlayChangeScene", 2f);
+        Invoke("PlayChangeScene", 2f); //Se llama a PlayChangeScene() tras 2 segundos
     }
     private void PlayChangeScene()
     {
-        changeFadeAnimator.ResetTrigger("BlackOut");
+        changeFadeAnimator.ResetTrigger("BlackOut"); 
         SceneManager.LoadScene("1_Intro");
     }
 
@@ -27,9 +27,9 @@ public class MainMenuBehaviour : MonoBehaviour
     {
         if (changeFadeAnimator != null)
         {
-            changeFadeAnimator.SetTrigger("BlackOut");
+            changeFadeAnimator.SetTrigger("BlackOut"); // Se hace animación de fundido a negro
         }
-        Invoke("ContinueChangeScene", 2f);
+        Invoke("ContinueChangeScene", 2f);//Se llama a ContinueChangeScene() tras 2 segundos
     }
 
     private void ContinueChangeScene()
@@ -43,27 +43,27 @@ public class MainMenuBehaviour : MonoBehaviour
     public void Quit() 
     {
         Debug.Log("Saliendo del juego ...");
-        changeFadeAnimator.SetTrigger("BlackOut");
-        Invoke("QuitAction", 2f);
+        changeFadeAnimator.SetTrigger("BlackOut"); // Se hace animación de fundido a negro
+        Invoke("QuitAction", 2f); //Se llama a QuitAction() tras 2 segundos
     }
 
     public void QuitAction()
     {
-        Application.Quit();
+        Application.Quit(); //Sale de la aplicación
     }
 
     //Botón Creditos
     public void Credits()
     {
         Debug.Log("Mostrando creditos");
-        changeFadeAnimator.SetTrigger("BlackOut");
-        Invoke("PlayCreditsScene", 2f);
+        changeFadeAnimator.SetTrigger("BlackOut"); // Se hace animación de fundido a negro
+        Invoke("PlayCreditsScene", 2f); //Se llama a PlayCreditsScene() tras 2 segundos
     }
 
     private void PlayCreditsScene()
     {
         changeFadeAnimator.ResetTrigger("BlackOut");
-        SceneManager.LoadScene("7_CreditsScene");
+        SceneManager.LoadScene("7_CreditsScene"); //Cambia a la escena de los créditos
     }
 
 }

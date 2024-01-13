@@ -6,8 +6,8 @@ public class DoorSoundComponent : MonoBehaviour
 {
     public AudioSource openDoor;
     public AudioSource closeDoor;
-    public GameObject doorInteractuable;
-    private bool isClosed;
+    public GameObject doorInteractuable; // Objeto interactuable de la puerta
+    private bool isClosed; // Alterna el sonido de la puerta 
 
     private void Awake()
     {
@@ -18,16 +18,17 @@ public class DoorSoundComponent : MonoBehaviour
 
     private void Update()
     {
+        // Cuando se activa la puerta, el sonido se reproduce en funcion de isClosed
         if (doorInteractuable.GetComponent<Activable>().isActivated())
         {
             if (isClosed && openDoor != null)
             {
-                openDoor?.Play();
+                openDoor.Play();
                 isClosed = false;
             }
             else if(!isClosed && closeDoor != null) 
             {
-                closeDoor?.Play();
+                closeDoor.Play();
                 isClosed = true;
             }
         }

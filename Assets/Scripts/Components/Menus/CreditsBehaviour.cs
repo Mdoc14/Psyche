@@ -14,7 +14,9 @@ public class CreditsBehaviour : MonoBehaviour
     private float timer;
     private void Update()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        transform.Translate(Vector3.up * speed * Time.deltaTime); //El panel de los créditos se desplaza hacia arriba con una velocidad
+
+        //Con un timer se controla cuando se acaban los créditos, pasando a la escena del menú
         if (timer > limit) 
         {
             GoToMainMenu();

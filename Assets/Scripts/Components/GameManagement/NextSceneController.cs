@@ -7,15 +7,15 @@ using UnityEngine.SceneManagement;
 public class NextSceneController : MonoBehaviour
 {
     public Animator changeFadeAnimator;
-    public GameObject finalObject;
-    public bool interactuable;
+    public GameObject finalObject; // Objeto con componente de la clase Activable con el que se interactua para cambiar de escena
+    public bool interactuable; // Comprueba si el cambio de escena será por interacción o no
 
     public void Update()
     {
-        //Comprobamos si el cambio de escena es por intracción del jugador o no
+        //Comprobamos si el cambio de escena es por interacción del jugador o no
         if (interactuable)
         {
-            //Comprobamos que se ha activado el objeto final de la escena
+            //Comprobamos que se ha activado el objeto final de la escena, ya que se destruye al interactuar
             if (finalObject==null)
             {
                 nextScene();
@@ -57,7 +57,8 @@ public class NextSceneController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (!interactuable) {
+        if (!interactuable)// En caso de no ser por interacción, cuando el player entre en el collider pasará a la siguiente escena 
+        {
             nextScene();
         }
     }

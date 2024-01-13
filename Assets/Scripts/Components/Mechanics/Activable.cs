@@ -5,16 +5,21 @@ using UnityEngine;
 public class Activable : MonoBehaviour
 {
     private PlayerController playerController;
-    public bool onlyOnce;
-    public bool destroyParent = false;
-    public int neededKeys;
-    private float t;
-    public bool sendmessage = true;
+    
     public GameObject affectedObject; //El objeto al que le afectara esta interacción
     public GameObject indicator; //Indicador InGame de que se puede interactuar
     public GameObject conditionIndicator; //Indicador InGame de lo que se necesita para poder interactuar
+
+    public bool onlyOnce;// Si el objeto solo es interactuado una vez o no
+    public bool destroyParent = false; // Si el padre se destruye o no
+    public bool sendmessage = true; // Si se manda un mensaje de activado y se activa la animación
     public bool onRange; //Si el jugador esta en rango para interactuar
     public bool activated; // indica si el interactuable ha sido activado
+
+    public int neededKeys; // 
+
+    private float t;
+
     private void Start()
     {
         indicator.SetActive(false);
@@ -47,7 +52,7 @@ public class Activable : MonoBehaviour
                     {
                         affectedObject.GetComponent<Animator>().SetTrigger("Activate");
                     }
-                    activated = true;
+                    activated = true; //Se ha activado
                     
                     if (onlyOnce)
                     {
@@ -68,7 +73,7 @@ public class Activable : MonoBehaviour
                     {
                         affectedObject.SendMessage("Activate");
                     }
-                    activated = true;
+                    activated = true; //Se ha activado
                     if (onlyOnce)
                     {
                         indicator.SetActive(false);
@@ -123,7 +128,7 @@ public class Activable : MonoBehaviour
         }
     }
 
-    public bool isActivated()
+    public bool isActivated() // Función utilizada para comprobar si se ha activado o no un objeto interactuable
     {
         bool aux = activated;
         activated = false;

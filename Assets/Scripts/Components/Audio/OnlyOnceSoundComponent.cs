@@ -7,8 +7,8 @@ public class OnlyOnceSoundComponent : MonoBehaviour
     private AudioSource source;
     public GameObject ObjectWithAudioSource;
     public GameObject objectInteractuable;
-    private bool active;
-    private bool soundPlayed;
+    private bool active; // Comprueba que el objeto interactuable esta activo o no
+    private bool soundPlayed; // Comprueba que el sonido solo suene una vez
 
     private void Awake()
     {
@@ -18,12 +18,12 @@ public class OnlyOnceSoundComponent : MonoBehaviour
 
     private void Update()
     {
-        active = objectInteractuable.activeSelf;
+        active = objectInteractuable.activeSelf; 
         if (!active) 
         {
-            if (soundPlayed)
+            if (soundPlayed) 
             {
-                soundPlayed  = false;
+                soundPlayed  = false; // Si el sonido todavía no ha sonado, se pone soundPlayed a false para que no suene más
                 source.Play();
             }
         }

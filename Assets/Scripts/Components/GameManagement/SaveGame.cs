@@ -8,7 +8,7 @@ public class SaveGame : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.saveGame();
+            GameManager.Instance.saveGame(); // Se guarda la escena actual en la que se encuentra el jugador
         }
         
     }
