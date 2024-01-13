@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AttackingPlayer : AShadowState
 {
-    bool playerIsDead = false;
+    bool playerIsDead;
 
     float timeSincePlayerDied = 0.0f;
 
@@ -15,22 +15,28 @@ public class AttackingPlayer : AShadowState
 
     public override void Enter()
     {
+        playerIsDead = false;
     }
 
     public override void Exit()
     {
+        playerIsDead = false;
     }
 
     public override void FixedUpdate()
     {
-        if (shadow.GetDistanceTo(shadow.GetPlayerAtSight().transform) > 1f)
+        Debug.Log("Atacando");
+        if (shadow.GetDistanceTo(shadow.GetPlayerAtSight().transform) > 0.8f)
         {
             shadow.MoveTo(shadow.GetPlayerAtSight().transform, shadow.GetAttackingSpeed());
         }
         else
         {
-            playerIsDead = true;
-            shadow.GetPlayerAtSight().GetComponent<PlayerController>().Die();
+            if (!playerIsDead)
+            {
+                playerIsDead = true;
+                shadow.GetPlayerAtSight().GetComponent<PlayerController>().Die();
+            }
         }
     }
 
@@ -41,7 +47,7 @@ public class AttackingPlayer : AShadowState
             timeSincePlayerDied += Time.deltaTime;
         }
 
-        if(timeSincePlayerDied >= 3.5)
+        if(timeSincePlayerDied >= 3.25)
         {
             shadow.RestoreShadow();
         }

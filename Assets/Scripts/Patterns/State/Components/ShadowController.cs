@@ -19,6 +19,7 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
 
     //Atributos para controlar al enemigo
     private Vector3 _initialPosition;
+    private Quaternion _initialRotation;
     private Transform _currentWaypoint; //Referencia a la transformada del waypoint actual
     private GameObject _playerAtSight = null; //Referencia al jugador si está a la vista del enemigo
 
@@ -42,6 +43,7 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
     void Awake()
     {
         _initialPosition = transform.position;
+        _initialRotation = transform.rotation;
         _currentWaypoint = waypoints[0];
         SetState(new LookingForAWaypoint(this));
     }
@@ -60,9 +62,12 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
     public void RestoreShadow()
     {
         transform.position = _initialPosition;
+        //transform.rotation = _initialRotation;
         _currentWaypoint = waypoints[0];
         _playerAtSight = null;
         SetState(new LookingForAWaypoint(this));
+        Debug.Log(_playerAtSight);
+        Debug.Log("Restaurando sombra...");
     }
 
     public GameObject GetEnemyGameObject()
