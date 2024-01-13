@@ -380,7 +380,7 @@ RectTransform:
   - {fileID: 4287946968157023689}
   - {fileID: 9040845397849782306}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5377110747405042988}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -2235,7 +2235,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 781446408389833378}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -2988,7 +2988,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7434355433827522763}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

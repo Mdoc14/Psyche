@@ -46,7 +46,7 @@ public class GameManager : Singleton <GameManager>
     }
 
     //Se lee de fichero la escena en la que se quedó el jugador en otra partida, si no tiene comienza una nueva
-    public int loadGame()
+    public void loadGame()
     {
         if (File.Exists(FilePath))
         {
@@ -54,18 +54,12 @@ public class GameManager : Singleton <GameManager>
             FileStream fileStream = File.OpenRead(FilePath);
             sceneSaved = (int)formatter.Deserialize(fileStream);
             fileStream.Close();
-            if (sceneSaved < 6)
-            {
-                return sceneSaved;
-            }
-            else
-            {
-                return 1;
-            }
         }
-        
-        Debug.LogWarning($"No se ha encontrado ningun fichero en {FilePath} .");
-        return 1;
+        else
+        {
+            Debug.LogWarning($"No se ha encontrado ningun fichero en {FilePath} .");
+            sceneSaved = 1;
+        }
     }
 
     public void saveSettings()
