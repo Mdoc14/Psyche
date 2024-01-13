@@ -25,8 +25,7 @@ public class AttackingPlayer : AShadowState
 
     public override void FixedUpdate()
     {
-        Debug.Log("Atacando");
-        if (shadow.GetDistanceTo(shadow.GetPlayerAtSight().transform) > 0.8f)
+        if (shadow.GetDistanceTo(shadow.GetPlayerAtSight().transform) > 0.8f && !playerIsDead)
         {
             shadow.MoveTo(shadow.GetPlayerAtSight().transform, shadow.GetAttackingSpeed());
         }
@@ -47,7 +46,7 @@ public class AttackingPlayer : AShadowState
             timeSincePlayerDied += Time.deltaTime;
         }
 
-        if(timeSincePlayerDied >= 3.25)
+        if(timeSincePlayerDied >= 3.75)
         {
             shadow.RestoreShadow();
         }

@@ -62,12 +62,10 @@ public class ShadowController : MonoBehaviour, IShadow //Contexto del Patrón Sta
     public void RestoreShadow()
     {
         transform.position = _initialPosition;
-        //transform.rotation = _initialRotation;
+        transform.rotation = _initialRotation;
         _currentWaypoint = waypoints[0];
         _playerAtSight = null;
         SetState(new LookingForAWaypoint(this));
-        Debug.Log(_playerAtSight);
-        Debug.Log("Restaurando sombra...");
     }
 
     public GameObject GetEnemyGameObject()
