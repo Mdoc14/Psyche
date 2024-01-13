@@ -25,7 +25,7 @@ public class AttackingPlayer : AShadowState
 
     public override void FixedUpdate()
     {
-        if (shadow.GetDistanceTo(shadow.GetPlayerAtSight().transform) > 0.8f && !playerIsDead)
+        if (shadow.GetDistanceTo(shadow.GetPlayerAtSight().transform) > 1f && !playerIsDead)
         {
             shadow.MoveTo(shadow.GetPlayerAtSight().transform, shadow.GetAttackingSpeed());
         }
