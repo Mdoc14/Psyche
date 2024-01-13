@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public interface IShadow
+public interface IShadow //Define los métodos que puede realizar el contexto
 {
     //Gestión de Estados
     public IState GetState();

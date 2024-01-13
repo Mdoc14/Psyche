@@ -5,32 +5,33 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : Singleton <GameManager>
+public class GameManager : Singleton <GameManager> //Componente para tener un Gestor del Juego único y persistente
 {
     [HideInInspector]
-    public SettingsStruct settings;
+    public SettingsStruct settings; //Estructura pública con cada uno de los ajustes del juego. Accesibles desde cualquier escena
 
-    private string settingsFileName = "settings.IDV";
-    private string settingsFilePath
+    private string settingsFileName = "settings.IDV"; //Nombre del fichero en el que se almacenarán
+    private string settingsFilePath //Ruta en la que se almacenará
     {
         get => $"{Application.dataPath}/{settingsFileName}";
     }
 
     [HideInInspector]
-    public int sceneSaved; // Escena guardada
+    public int sceneSaved; //Entero que representa la última escena a la que llegó el jugador
 
-    private string FileName = "partidaGuardada.IDV"; 
-    private string FilePath
+    private string FileName = "partidaGuardada.IDV"; //Fichero en el que se guardará
+    private string FilePath //Ruta en la que se almacenará
     {
         get => $"{Application.dataPath}/{FileName}";
     }
 
+    //Al comienzo del juego
     protected override void Awake()
     {
         base.Awake();
-        if (!loadSettings())
+        if (!loadSettings()) //Si no se han podido cargar los ajustes desde fichero
         {
-            settings = new SettingsStruct();
+            settings = new SettingsStruct(); //Creamos nuevos ajustes por defecto
         }
     }
 
@@ -62,6 +63,7 @@ public class GameManager : Singleton <GameManager>
         }
     }
 
+    //Guarda los ajustes actuales en fichero. Es llamada siempre que se modifique alguno de los ajustes (se comprueba con un dirty flag)
     public void saveSettings()
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -71,6 +73,7 @@ public class GameManager : Singleton <GameManager>
         fileStream.Close();
     }
 
+    //Carga los ajustes de fichero si existe, devolviendo true. En caso contrario, devuelve false
     public bool loadSettings()
     {
         if (File.Exists(settingsFilePath))

@@ -19,13 +19,14 @@ public class WalkingToAWaypoint : AShadowState
 
     public override void FixedUpdate()
     {
+        //Si estamos lejos del waypoint nos movemos hacia él
         if (shadow.GetDistanceTo(shadow.GetCurrentWaypoint()) > 0.5f)
         {
             shadow.MoveTo(shadow.GetCurrentWaypoint(), shadow.GetBasicMovementSpeed());
         }
-        else
+        else //Cuando estemos cerca
         {
-            shadow.SetState(new LookingForAWaypoint(shadow));
+            shadow.SetState(new LookingForAWaypoint(shadow)); //Pasamos a buscar el siguiente waypoint
         }
     }
 

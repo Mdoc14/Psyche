@@ -34,9 +34,9 @@ public class MainMenuBehaviour : MonoBehaviour
 
     private void ContinueChangeScene()
     {
-        GameManager.Instance.loadGame();
+        GameManager.Instance.loadGame(); //Cargamos de fichero la escena guardada. Si no existe se asigna la primera escena ("nueva" partida)
         changeFadeAnimator.ResetTrigger("BlackOut");
-        SceneManager.LoadScene(GameManager.Instance.sceneSaved);
+        SceneManager.LoadScene(GameManager.Instance.sceneSaved); //Cargamos la escena que está almacenada en el gestor del juego
     }
 
     //Botón Salir

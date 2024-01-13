@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
     public Animator changeFadeAnimator;
 
     [HideInInspector]
-    public bool gameIsPaused = false;
+    public bool gameIsPaused = false; //Controla si el juego está en estado de pausa (al principio es false)
 
     private GameObject pauseMenuUI;
     private GameObject tutorialUI;
@@ -27,22 +27,23 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //Si se pulsa escape
         {
-            if (gameIsPaused && pauseMenuUI.activeSelf)
+            if (gameIsPaused && pauseMenuUI.activeSelf) //Si el juego está pausado y estamos en el menú de pausa (no en otros menús)
             {
-                Resume();
-            } else if (gameIsPaused && !pauseMenuUI.activeSelf)
+                Resume(); //Volvemos al juego
+            } else if (gameIsPaused && !pauseMenuUI.activeSelf) //Si el juego está pausado y estamos en otros menús distintos al de pausa
             {
                 Debug.Log("Not in pause menu!");
-            } else
+            } else //En caso contrario (No está pausado)
             {
-                if(!tutorialUI.activeSelf)
-                Pause();
+                if(!tutorialUI.activeSelf) //Si no está el PopUp del tutorial
+                Pause(); //Pausamos el juego
             }
         }
     }
 
+    //Método para volver al juego
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
@@ -50,6 +51,7 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
     }
 
+    //Método para pausar el juego
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
@@ -57,12 +59,14 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = true;
     }
 
+    //Botón Opciones
     public void GoToSettingsMenu()
     {
         pauseMenuUI.SetActive(false);
         settingsUI.SetActive(true);
     }
 
+    //Botón Salir al Menú
     public void GoBackToMenu()
     {
         Time.timeScale = 1f;
@@ -73,18 +77,19 @@ public class PauseMenu : MonoBehaviour
         Invoke("PlayChangeScene", 2f);
     }
 
+    private void PlayChangeScene()
+    {
+        changeFadeAnimator.ResetTrigger("BlackOut");
+        SceneManager.LoadScene("0_MainMenu");
+    }
+
+    //Botón Salir del Juego
     public void Quit()
     {
         Time.timeScale = 1f;
         Debug.Log("Saliendo del juego ...");
         changeFadeAnimator.SetTrigger("BlackOut");
         Invoke("QuitAction", 2f);
-    }
-
-    private void PlayChangeScene()
-    {
-        changeFadeAnimator.ResetTrigger("BlackOut");
-        SceneManager.LoadScene("0_MainMenu");
     }
 
     public void QuitAction()

@@ -9,10 +9,10 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer audioMixer;
-    private Volume volume;
+    public AudioMixer audioMixer; //Mezclador de volumen
+    private Volume volume; //GlobalVolume para gestión de brillo
 
-    private bool isDirty = false;
+    private bool isDirty = false; //Dirty flag para comprobar si alguno de los ajustes ha cambiado y guardarlos en fichero
 
     private void Awake()
     {
@@ -21,15 +21,15 @@ public class SettingsMenu : MonoBehaviour
 
     private void Start()
     {
-        RestoreSliders();
-        gameObject.SetActive(false);
+        RestoreSliders(); //Al principio de una escena con menú de ajustes se restauran los sliders con los datos almacenados en el gestor del juego
+        gameObject.SetActive(false); //Se desactiva el menú de ajustes
     }
 
     public void SetMasterVolume(float volume) //Función que recibe un float para modificar el canal Master del audioMixer con ese valor.
     {
         audioMixer.SetFloat("volumeMaster", volume); //Le asigna el valor del parámetro volume al parámetro volumeMaster del audioMixer.
-        GameManager.Instance.settings.masterVolume = volume;
-        isDirty = true;
+        GameManager.Instance.settings.masterVolume = volume; //Se almacena el nuevo volumen en el gestor del juego.
+        isDirty = true; //Se activa el dirty flag.
     }
 
     //Las siguientes dos funciones funcionan de forma equivalente.
@@ -48,6 +48,7 @@ public class SettingsMenu : MonoBehaviour
         isDirty = true;
     }
 
+    //Esta función realiza algo similar con el valor de post-exposición de los ajustes de color del perfil del GlobalVolume
     public void SetBrightnessIntensity(float intensity)
     {
         ColorAdjustments colorAdjustments;
@@ -59,6 +60,8 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
+    //Función que se encarga de establer el valor de los Sliders con los guardados en el gestor del juego. Además, para el inicio del juego,
+    //asigna esos valores al mezclador de volumen y al valor de la post-exposición.
     public void RestoreSliders()
     {
         Slider masterVolumeSlider = transform.Find("MasterVolumeSlider").gameObject.GetComponent<Slider>();
@@ -83,10 +86,11 @@ public class SettingsMenu : MonoBehaviour
 
     public void Update()
     {
-        if (isDirty)
+        //Se comprueba si el estado del menú de ajustes está sucio
+        if (isDirty) //En caso afirmativo
         {
-            GameManager.Instance.saveSettings();
-            isDirty = false;
+            GameManager.Instance.saveSettings(); //Se guardan los nuevos ajustes en fichero
+            isDirty = false; //Asignamos el estado de suciedad a false
         }
     }
 }
