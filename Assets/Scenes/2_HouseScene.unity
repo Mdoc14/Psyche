@@ -9857,7 +9857,6 @@ MonoBehaviour:
   - {fileID: 1455111165}
   - {fileID: 1358847888}
   servicioParedes:
-  - {fileID: 1455111165}
   - {fileID: 1358847889}
   - {fileID: 1358847887}
   - {fileID: 1455111155}
